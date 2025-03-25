@@ -1,0 +1,137 @@
+@import "../../../scss/main";
+
+.heroSection {
+  @include flex;
+
+  .sideBar {
+    width: 22%;
+
+    .sidebarMenu {
+      background-color: #fff;
+      box-shadow: 0 0 40px 5px (rgb(0 0 0 /5%));
+      transition: all 0.3s ease-in-out;
+      height: 100vh;
+      overflow-y: auto;
+
+      &.closed {
+        width: 80px;
+
+        .category-name {
+          display: none;
+        }
+      }
+
+      .category-list {
+        list-style: none;
+        padding: 0;
+
+        .category-item {
+          align-items: center;
+          padding: 8px;
+          font-size: 16px;
+          color: #333;
+          cursor: pointer;
+          border-radius: 5px;
+          transition: background 0.3s ease;
+
+          .category {
+            @include justifyBetween;
+            padding: 8px 16px 8px 10px;
+
+            .category-name {
+              @include flex;
+              gap: 10px;
+
+              img {
+                width: 25px;
+              }
+            }
+          }
+
+          &:hover {
+            background: #f5f5f5;
+          }
+        }
+      }
+    }
+
+    .herobanner {
+      width: 75%;
+      margin-left: 250px;
+      padding: 20px;
+      transition: margin-left 0.3s ease-in-out;
+
+      .sidebarMenu.closed + & {
+        margin-left: 80px;
+      }
+    }
+  }
+
+  .herobanner {
+    width: 78%;
+    position: relative;
+
+    .leftArrow {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+    .rightArrow {
+      position: absolute;
+      right: 50px;
+      bottom: 0;
+    }
+
+    .herobannerSliderMain {
+      .herobannerSlider {
+        width: 100%;
+        @include flex;
+
+        .herobannerInfo {
+          width: 50%;
+
+          .offerDiscount {
+            h6 {
+              @include h6;
+              animation-delay: 0.25s;
+              animation-timing-function: ease-in-out;
+            }
+          }
+
+          .herobannerProductName {
+            width: 410px;
+            h1 {
+              @include h1;
+              color: var(--color-dark2);
+              font-size: 45px;
+              font-weight: 800;
+              text-transform: capitalize;
+              margin: 20px 0;
+            }
+          }
+
+          .herobannerDIscription {
+            p {
+              @include p;
+            }
+          }
+
+          .herobannerProductBtn {
+            button {
+              border: none;
+            }
+          }
+        }
+
+        .herobannerImg {
+          width: 450px;
+          height: auto;
+
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

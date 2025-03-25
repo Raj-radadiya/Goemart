@@ -1,0 +1,34 @@
+@import "../../../scss/main";
+.grid {
+  @include gridThree;
+  gap: 30px;
+  .collectionsCard {
+    @include backgroundImage;
+    // background-image: url("../../assets/image//mini-banner-1.png");
+    border-radius: 10px;
+    .collectionsCardDetails {
+      padding: 60px 40px;
+      width: 70%;
+      .collectionsType {
+        padding-bottom: 10px;
+        span {
+          @include span;
+        }
+      }
+      .collectionsTitle {
+        padding-bottom: 20px;
+        h3 {
+          @include h3;
+        }
+      }
+      .collectionsLink {
+        a {
+          @include a;
+          display: inline;
+          transition: 0.3s ease-in-out;
+          padding-bottom: 5px;
+        }
+      }
+    }
+  }
+}

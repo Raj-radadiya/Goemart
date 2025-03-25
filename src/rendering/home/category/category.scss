@@ -1,0 +1,66 @@
+@import "../../../scss/main";
+
+.padding {
+  @include commonPadding;
+
+  .categoryIcon {
+    @include justifyBetween;
+    margin: 0 0 30px;
+
+    .categoryTitle {
+      @include categoryTitle;
+    }
+  }
+
+  .allCatergory {
+    @include gridSix;
+    gap: 20px;
+
+    .categoryCard {
+      background-color: var(--color-lightBlue);
+      border-radius: 5px;
+      @include justifyCenter;
+      flex-direction: column;
+      cursor: pointer;
+
+      .categoryImg {
+        background-color: var(--color-category);
+        width: 80px;
+        height: 80px;
+        margin: 0 auto;
+        border-radius: 50%;
+        @include justifyCenter;
+        transition: 0.5s ease-in-out;
+
+        img {
+          width: 45px;
+          height: 45px;
+          object-fit: cover;
+          filter: brightness(0) invert(1);
+        }
+      }
+
+      .categoryDIsc {
+        h4 {
+          margin: 10px 0;
+          transition: 0.5s ease-in-out;
+        }
+
+        p {
+          @include p;
+          color: var(--color-gray) !important;
+        }
+      }
+
+      &:hover {
+        .categoryImg {
+          background-color: var(--icon-color);
+        }
+
+        .categoryDIsc h4 {
+          color: var(--icon-color);
+        }
+      }
+    }
+  }
+}

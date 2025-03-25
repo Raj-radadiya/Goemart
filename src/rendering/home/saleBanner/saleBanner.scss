@@ -1,0 +1,63 @@
+@import "../../../scss/main";
+
+.womenSale {
+  @include gridTwo;
+  gap: 30px;
+  margin: 50px 0;
+
+  .saleBanner {
+    min-height: 300px;
+    border-radius: 10px;
+    position: relative;
+    background-color: var(--sale-background-color);
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+    .saleContent {
+      position: relative;
+    //   z-index: 1;
+      padding: 50px;
+      //   @include flex;
+      //   flex-direction: column;
+      //   align-items: center;
+
+      h3 {
+        display: inline-block;
+        color: var(--icon-color);
+        padding: 5px 0;
+        border-top: 2px solid var(--icon-color);
+        border-bottom: 2px solid var(--icon-color);
+        letter-spacing: 3px;
+        font-weight: 500;
+        font-size: 16px;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+      }
+
+      h1 {
+        color: var(--color-black);
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 30px;
+        max-width: 300px;
+        line-height: 1.2;
+        text-transform: uppercase;
+
+        .discount-percentage {
+          color: var(--icon-color);
+        }
+      }
+
+      button {
+        border: none;
+      }
+    }
+  }
+}

@@ -1,25 +1,43 @@
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
 import './App.css';
+import Header from './layout/header';
+import "animate.css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import RouteIng from './route';
+import CustomLoader from './components/CustomLoader';
+
+// Create a context for global loading state
+export const LoadingContext = React.createContext();
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+        // Initial loading delay
+        //le
+        const timer = setTimeout(() => {
+            setIsLoading(false);
+        }, []);
+
+        return () => clearTimeout(timer);
+    }, []);
+
+    const loadingState = {
+        isLoading,
+        setIsLoading
+    };
+
+    if (isLoading) {
+        return <CustomLoader />;
+    }
+
+    return (
+        <LoadingContext.Provider value={loadingState}>
+            <Header />
+            <RouteIng />
+        </LoadingContext.Provider>
+    );
 }
 
 export default App;

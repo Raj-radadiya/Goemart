@@ -1,0 +1,25 @@
+.product-label {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  z-index: 1;
+  font-size: 12px;
+  font-weight: 600;
+
+  &.in-stock {
+    background-color: #00a046;
+    color: white;
+  }
+
+  &.out-of-stock {
+    background-color: #ff4747;
+    color: white;
+  }
+
+  &.low-stock {
+    background-color: #ffa726;
+    color: white;
+  }
+}

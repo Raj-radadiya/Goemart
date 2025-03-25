@@ -1,0 +1,27 @@
+@mixin flex {
+  display: flex !important;
+  align-items: center;
+}
+@mixin justifyBetween {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@mixin gridTwo {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+@mixin gridThree {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+@mixin gridSix {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  text-align: center;
+}
+@mixin justifyCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

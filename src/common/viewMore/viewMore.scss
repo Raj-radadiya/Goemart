@@ -1,0 +1,9 @@
+@import "../../scss/main";
+.categoyExplore {
+  @include flex;
+  gap: 10px;
+  font-weight: 600;
+  span {
+    color: var(--color-gray);
+  }
+}

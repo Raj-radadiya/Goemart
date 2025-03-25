@@ -1,0 +1,91 @@
+@import "../../scss/main";
+
+.wishlist {
+  position: relative;
+  
+  .cardWishlist {
+    padding: 10px;
+    border-radius: 5px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 1px solid var(--border-gray-color);
+    transition: 0.3s ease;
+
+    .cardViewEye {
+      font-size: 20px;
+      color: var(--icon-color);
+    }
+
+    &:hover {
+      background-color: var(--icon-color);
+      
+      .cardViewEye {
+        color: white;
+      }
+    }
+  }
+}
+
+// Keep the quickView styles for the card hover version
+.quickView {
+  position: relative;
+  
+  .cardViewImg {
+    padding: 10px;
+    border-radius: 50%;
+    background-color: var(--color-category);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    .cardViewEye {
+      font-size: 20px;
+      color: white;
+    }
+
+    &:hover {
+      background-color: var(--icon-color);
+    }
+  }
+}
+
+.quickViewText {
+  position: absolute;
+  left: 50%;
+  bottom: 100%;
+  transform: translateX(-50%);
+  background-color: var(--color-category);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease;
+  margin-bottom: 5px;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid var(--color-category);
+  }
+}
+
+.cardWishlist:hover + .quickViewText,
+.cardViewImg:hover + .quickViewText {
+  opacity: 1;
+  visibility: visible;
+}

@@ -1,0 +1,119 @@
+@import "../mixin/mixin";
+
+@mixin anchor {
+  font-family: var(--body-font);
+}
+
+@mixin commonPadding {
+  padding: 70px 0 90px;
+}
+
+@mixin categoryTitleP {
+  font-weight: 600;
+  font-size: 26px;
+}
+
+@mixin a {
+  color: var(--color-dark2);
+  margin-top: 15px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--color-dark2);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--icon-color);
+    border-bottom: 2px solid var(--icon-color);
+  }
+}
+
+@mixin cardA {
+  color: var(--color-dark2);
+  font-weight: 600;
+  line-height: 1.2;
+  font-size: 17px;
+  transition: all 0.3s ease-in-out;
+  font-family: var(--heading-font);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--icon-color);
+  }
+}
+
+@mixin cardSpan {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-red);
+}
+
+@mixin span {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--icon-color);
+  margin-bottom: 10px;
+  text-transform: capitalize;
+}
+
+@mixin h1 {
+  color: var(--color-dark);
+  font-weight: 600;
+  font-family: var(--heading-font);
+  line-height: 1.2;
+  margin: 0;
+}
+
+@mixin h3 {
+  font-size: 22px;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: var(--color-dark2);
+}
+@mixin h4 {
+  font-size: 25px;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: var(--color-dark);
+  // margin: 0 0 15px;
+  line-height: 1.2;
+}
+
+@mixin h6 {
+  font-size: 22px;
+  letter-spacing: 4px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--icon-color);
+}
+
+@mixin p {
+  color: var(--color-dark2);
+  line-height: 30px;
+  font-weight: 400;
+  font-size: 17px;
+  margin-bottom: 25px;
+}
+
+@mixin grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@mixin backgroundImage {
+  background-repeat: no-repeat;
+}
+
+@mixin categoryTitle {
+  @include flex;
+  gap: 10px;
+
+  p {
+    @include categoryTitleP;
+  }
+
+  span {
+    font-size: 25px;
+    font-weight: 600;
+  }
+}
