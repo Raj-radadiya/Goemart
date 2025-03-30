@@ -5,13 +5,11 @@ import { SectionTitle } from "../../../dataset/herobannerSlider";
 import ViewMore from "../../../common/viewMore";
 import "./tranding.scss";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
-import AddToCartBtn from "../../../common/addtocartbtn";
-import CardHoverComp from "../../../common/cardHoverComp";
-import RatingStars from '../../../components/star';
+import ProductCard from '../../../common/productCard';
 
 // Custom arrow components for slider
 function SampleNextArrow(props) {
-  const { className, style, onClick } = props;
+  const {onClick } = props;
   return (
     <div className="leftArrow" onClick={onClick}>
       <IoIosArrowForward className="trandingLeftArrow" />
@@ -20,7 +18,7 @@ function SampleNextArrow(props) {
 }
 
 function SamplePrevArrow(props) {
-  const { className, style, onClick } = props;
+  const {onClick } = props;
   return (
     <div className="rightArrow" onClick={onClick}>
       <IoIosArrowBack className="trandingRightArrow" />
@@ -91,34 +89,8 @@ export default function HotItems() {
       </div>
       <div className="trandingItemsSlider">
         <Slider {...settings}>
-          {Array.isArray(products) && products.map((product) => (
-            <div key={product.id} className="productCard">
-              <div className="productImgAndMore">
-                <div className="productImg">
-                  <img
-                    src={product.thumbnail}
-                    alt={product.title}
-                  />
-                </div>
-                <div className="productMore">
-                  <CardHoverComp />
-                </div>
-              </div>
-              <div className="productName">
-                <p>{product.title}</p>
-              </div>
-              <div className="productRating">
-                <RatingStars rating={product.rating} />
-              </div>
-              <div className="productPriceCart">
-                <div className="productCart">
-                  <AddToCartBtn />
-                </div>
-                <div className="productPrice">
-                  <span>${product.price}</span>
-                </div>
-              </div>
-            </div>
+          {products.map((product) => (
+            <ProductCard product={product} />
           ))}
         </Slider>
       </div>

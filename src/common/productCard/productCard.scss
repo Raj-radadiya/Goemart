@@ -1,5 +1,8 @@
-.productCard{
-    .productImg{
-        
+.productCard {
+    outline: none;
+    transition: transform 0.2s ease;
+    
+    &:hover {
+      transform: translateY(-5px);
     }
-}
+  }

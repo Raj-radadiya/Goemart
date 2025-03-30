@@ -13,7 +13,6 @@ export default function QuickView() {
                     <div className='quickViewText'>Quick View</div>
                 </div>
             </div>
-
         </>
     )
 }

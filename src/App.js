@@ -6,6 +6,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import RouteIng from './route';
 import CustomLoader from './components/CustomLoader';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 // Create a context for global loading state
 export const LoadingContext = React.createContext();
