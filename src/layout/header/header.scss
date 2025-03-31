@@ -23,23 +23,37 @@
             padding: 0 13px 0 6px;
             color: var(--color-white);
 
+
             .dropdown-toggle {
+              @include flex;
+
+              span {
+                padding: 0 6px 0 0;
+              }
+
+              .dollar {
+                margin-right: 5px;
+                font-size: 20px;
+              }
+
+              align-items: center;
               background-color: transparent;
               color: var(--color-white);
               border: none;
               font-size: var(--font-sm);
               transition: 0.3s ease-in-out;
 
-              i {
-                padding: 0 5px;
-
-                &:first-child {
-                  color: var(--light-green-color);
-                }
-              }
-
               &:hover {
                 color: var(--light-green-color);
+              }
+            }
+
+            .social-icon {
+              color: var(--icon-color);
+              transition: 0.3s ease-in-out;
+
+              &:hover {
+                color: var(--color-white);
               }
             }
 
@@ -159,7 +173,6 @@
     align-items: center;
     border: 1px solid var(--light-gray-color);
     border-radius: 8px;
-    padding: 8px;
     color: var(--dark-gray-color);
     transition: all 0.3s ease-in-out;
 

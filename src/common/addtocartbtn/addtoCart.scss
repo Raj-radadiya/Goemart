@@ -19,7 +19,8 @@
 
     &:hover {
       background-color: var(--icon-color);
-      & + .addToCartText {
+
+      &+.addToCartText {
         opacity: 1;
         visibility: visible;
         transform: translateY(-50%) translateX(0);
@@ -43,6 +44,7 @@
     text-align: center;
 
     p {
+      margin: 0;
       white-space: nowrap;
       font-size: 13px;
       color: var(--color-white);
@@ -61,6 +63,7 @@
 
     &:hover {
       background-color: var(--icon-color);
+
       &::after {
         border-left-color: var(--icon-color);
       }

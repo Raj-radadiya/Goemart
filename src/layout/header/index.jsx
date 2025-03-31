@@ -1,11 +1,13 @@
 import { useState, useRef, useEffect } from "react";
 import "./header.scss";
 import { LuMails } from "react-icons/lu";
-import { RiCustomerService2Fill } from "react-icons/ri";
+import { RiCustomerService2Fill, RiFontSize } from "react-icons/ri";
 import { IoMdHelpCircleOutline } from "react-icons/io";
 import { LuAlarmClockPlus } from "react-icons/lu";
 import { MdOutlineAccountCircle } from "react-icons/md";
 import { AiOutlineLogin } from "react-icons/ai";
+import { CgDollar } from "react-icons/cg";
+import { IoEarthSharp } from "react-icons/io5";
 import logo from "../../assets/logo/web_logo.png";
 import CountIncrese from "../../common/increseCount";
 import CommonButton from "../../common/button";
@@ -87,15 +89,9 @@ export default function Header() {
                     <a href="#">Login</a>
                   </div>
                   {/* Dropdown Added */}
-                  <div
-                    className="contact"
-                    ref={(el) => (dropdownRefs.current["currency"] = el)}
-                  >
-                    <div
-                      className="dropdown-toggle"
-                      onClick={() => toggleDropdown("currency")}
-                    >
-                      USD<i className="fa-solid fa-angle-down"></i>
+                  <div className="contact" ref={(el) => (dropdownRefs.current["currency"] = el)} >
+                    <div className="dropdown-toggle" onClick={() => toggleDropdown("currency")}>
+                      <CgDollar className="dollar" /><span>USD</span>
                     </div>
                     {openDropdown === "currency" && (
                       <div className="dropdown-content">
@@ -114,7 +110,7 @@ export default function Header() {
                       className="dropdown-toggle"
                       onClick={() => toggleDropdown("language")}
                     >
-                      EN<i className="fa-solid fa-angle-down"></i>
+                      <IoEarthSharp className="dollar" /><span> EN</span>
                     </div>
                     {openDropdown === "language" && (
                       <div className="dropdown-content">
@@ -160,9 +156,8 @@ export default function Header() {
               >
                 <span>All Category</span>
                 <i
-                  className={`fa-solid fa-chevron-down ${
-                    openDropdown === "category" ? "rotate" : ""
-                  }`}
+                  className={`fa-solid fa-chevron-down ${openDropdown === "category" ? "rotate" : ""
+                    }`}
                 ></i>
                 {openDropdown === "category" && (
                   <ul className="dropdown-list show">

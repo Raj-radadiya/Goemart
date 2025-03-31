@@ -61,7 +61,7 @@
       padding: 20px;
       transition: margin-left 0.3s ease-in-out;
 
-      .sidebarMenu.closed + & {
+      .sidebarMenu.closed+& {
         margin-left: 80px;
       }
     }
@@ -76,6 +76,7 @@
       right: 0;
       bottom: 0;
     }
+
     .rightArrow {
       position: absolute;
       right: 50px;
@@ -84,6 +85,7 @@
 
     .herobannerSliderMain {
       .herobannerSlider {
+        padding: 0 50px;
         width: 100%;
         @include flex;
 
@@ -100,6 +102,7 @@
 
           .herobannerProductName {
             width: 410px;
+
             h1 {
               @include h1;
               color: var(--color-dark2);
