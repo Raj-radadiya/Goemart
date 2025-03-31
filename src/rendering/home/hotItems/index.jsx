@@ -9,7 +9,7 @@ import ProductCard from '../../../common/productCard';
 
 // Custom arrow components for slider
 function SampleNextArrow(props) {
-  const {onClick } = props;
+  const { onClick } = props;
   return (
     <div className="leftArrow" onClick={onClick}>
       <IoIosArrowForward className="trandingLeftArrow" />
@@ -18,7 +18,7 @@ function SampleNextArrow(props) {
 }
 
 function SamplePrevArrow(props) {
-  const {onClick } = props;
+  const { onClick } = props;
   return (
     <div className="rightArrow" onClick={onClick}>
       <IoIosArrowBack className="trandingRightArrow" />

@@ -22,27 +22,27 @@ export default function ProductCard({ product }) {
         className="productCard"
       >
         <div className="productImgAndMore">
-          <ProductLabel stock={el.product.stock} isNew={!el.product.isLowStock && !el.product.isOutOfStock} />
-          <div className="productImg" onClick={() => handleProductClick(el.product.id)}>
-            <img src={el.product.thumbnail} alt={el.product.title} />
+          <ProductLabel stock={product.stock} />
+          <div className="productImg" onClick={() => handleProductClick(product.id)}>
+            <img src={product.thumbnail} alt={product.title} />
           </div>
           <div className="productMore">
-            <CardHoverComp product={el.product} />
+            <CardHoverComp product={product} />
           </div>
         </div>
-        <div onClick={() => handleProductClick(el.product.id)}>
+        <div onClick={() => handleProductClick(product.id)}>
           <div className="productName" >
-            <p>{el.product.title}</p>
+            <p>{product.title}</p>
           </div>
           <div className="productRating">
-            <RatingStars rating={el.product.rating} />
+            <RatingStars rating={product.rating} />
           </div>
           <div className="productPriceCart">
             <div className="productCart" >
               <AddToCartBtn />
             </div>
             <div className="productPrice">
-              <span>${el.product.price}</span>
+              <span>${product.price}</span>
             </div>
           </div>
         </div>
@@ -50,4 +50,3 @@ export default function ProductCard({ product }) {
     </>
   );
 }
-

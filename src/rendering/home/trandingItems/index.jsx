@@ -4,14 +4,8 @@ import { SectionTitle } from "../../../dataset/herobannerSlider";
 import ViewMore from "../../../common/viewMore";
 import "./tranding.scss";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
-import { useNavigate } from 'react-router-dom';
 import CustomLoader from '../../../components/CustomLoader';
-
-import AddToCartBtn from "../../../common/addtocartbtn";
-import CardHoverComp from "../../../common/cardHoverComp";
-import ProductLabel from "../../../components/ProductLabel";
 import useProductApi from "../../../api/productApi";
-import RatingStars from '../../../components/star';
 import ProductCard from "../../../common/productCard";
 
 // Custom arrow components for slider
