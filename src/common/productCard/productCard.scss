@@ -1,8 +1,91 @@
+@import "../../scss/main";
 .productCard {
-    outline: none;
-    transition: transform 0.2s ease;
-    
-    &:hover {
-      transform: translateY(-5px);
+  padding: 20px;
+  position: relative;
+  cursor: pointer;
+
+  .productImgAndMore {
+    position: relative;
+    overflow: hidden;
+
+    .productImg {
+      border-radius: 8px;
+      img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+    }
+
+    .productMore {
+      position: absolute;
+      bottom: -50px;
+      left: 0;
+      right: 0;
+      transform: none;
+      display: flex;
+      justify-content: center;
+      padding: 10px;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease-in-out;
     }
   }
+
+  .productName {
+    margin: 10px 0;
+
+    a {
+      @include cardA;
+
+      &:hover {
+        color: var(--icon-color);
+      }
+    }
+  }
+
+  .productRating {
+    margin: 8px 0;
+
+    .stars-container {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+
+      svg {
+        font-size: 16px;
+      }
+
+      .star-filled,
+      .star-half {
+        color: #ffb800;
+      }
+
+      .star-empty {
+        color: #cccccc;
+      }
+    }
+  }
+
+  .productPriceCart {
+    @include flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-direction: row-reverse;
+
+    .productPrice {
+      span {
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--color-red);
+      }
+    }
+  }
+  &:hover .productMore {
+    display: flex;
+    bottom: 0;
+    opacity: 1;
+    visibility: visible;
+  }
+}

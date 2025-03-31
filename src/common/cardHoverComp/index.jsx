@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PopUpModel from '../../components/Model/Model';
 import QuickView from '../quickView';
 import Wishlist from '../wishlist';
+import './cardHover.scss';
 
 export default function CardHoverComp({ product }) {
     const [showModal, setShowModal] = useState(false);
@@ -22,7 +23,7 @@ export default function CardHoverComp({ product }) {
                 </div>
             </div>
 
-            <PopUpModel 
+            <PopUpModel
                 show={showModal}
                 handleClose={() => setShowModal(false)}
                 product={product}

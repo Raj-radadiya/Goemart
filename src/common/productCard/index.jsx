@@ -2,21 +2,23 @@ import React from "react";
 import "./productCard.scss";
 import ProductLabel from "../../components/ProductLabel";
 import CardHoverComp from "../cardHoverComp";
-import { Navigate } from "react-router";
+import { useNavigate } from "react-router";
 import RatingStars from "../../components/star";
 import AddToCartBtn from "../addtocartbtn";
 
-export default function ProductCard(el) {
+export default function ProductCard({ product }) {
+  const navigate = useNavigate();
+
   const handleProductClick = (productId) => {
-    console.log("Clicking product:", productId); // Debug log
+    console.log("Clicking product:", productId);
     if (productId) {
-      Navigate(`/product/${productId}`);
+      navigate(`/product/${productId}`);
     }
   };
   return (
     <>
       <div
-        key={el.product.id}
+        key={product.id}
         className="productCard"
       >
         <div className="productImgAndMore">

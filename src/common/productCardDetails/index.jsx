@@ -7,7 +7,7 @@ import CommonButton from '../button';
 import Wishlist from '../wishlist';
 
 export default function CardDetails() {
-  const [placement, setPlacement] = React.useState("top");
+  // const [placement, setPlacement] = React.useState("top");
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
