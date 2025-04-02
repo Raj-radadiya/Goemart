@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 import RouteIng from './route';
 import CustomLoader from './components/CustomLoader';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { AllBrands } from './components/allBrands';
 
 
 // Create a context for global loading state
@@ -38,6 +39,7 @@ function App() {
         <LoadingContext.Provider value={loadingState}>
             <Header />
             <RouteIng />
+            <AllBrands/>
         </LoadingContext.Provider>
     );
 }

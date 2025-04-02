@@ -1,4 +1,5 @@
 @import "../../scss/main";
+
 .quick-view-modal {
     .modal-dialog {
         max-width: 800px;
@@ -15,7 +16,9 @@
 
         .product-image {
             flex: 0 0 45%;
-            
+            align-items: center;
+            @include flex;
+
             img {
                 width: 100%;
                 height: auto;
@@ -28,20 +31,38 @@
             flex: 0 0 55%;
             padding: 10px;
 
-            .price, .rating, .description {
-                margin-bottom: 15px;
+            .productName {
+                margin: 0 0 5px;
+            }
 
-                strong {
-                    display: inline-block;
-                    min-width: 100px;
-                    margin-bottom: 5px;
+            .ModelRating {
+                margin: 0 0 10px;
+                @include flex;
+
+                .review-count {
+                    color: var(--dark-gray-color);
+                    font-weight: 500;
+                    padding: 0 0 0 5px;
                 }
             }
 
-            .description {
-                p {
-                    margin-top: 8px;
-                    line-height: 1.6;
+            .price {
+                color: var(--icon-color);
+                font-size: 24px;
+            }
+
+            .brand,
+            .category,
+            .stock,
+            .squId,
+            .discription {
+                color: var(--dark-gray-color);
+                font-weight: 500;
+                margin: 0 0 10px;
+
+                span {
+                    display: inline-block;
+                    padding-right: 50px;
                 }
             }
         }

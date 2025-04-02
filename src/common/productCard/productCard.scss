@@ -46,25 +46,6 @@
 
   .productRating {
     margin: 8px 0;
-
-    .stars-container {
-      display: flex;
-      align-items: center;
-      gap: 2px;
-
-      svg {
-        font-size: 16px;
-      }
-
-      .star-filled,
-      .star-half {
-        color: #ffb800;
-      }
-
-      .star-empty {
-        color: #cccccc;
-      }
-    }
   }
 
   .productPriceCart {

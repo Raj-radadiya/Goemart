@@ -1,5 +1,6 @@
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { AiOutlineStar } from "react-icons/ai";
+import './star.scss';
 const RatingStars = ({ rating }) => {
     const stars = [];
     const totalStars = 5;

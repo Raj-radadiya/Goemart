@@ -22,7 +22,7 @@
             border-right: 1px solid var(--header-border-color);
             padding: 0 13px 0 6px;
             color: var(--color-white);
-
+            cursor: pointer;
 
             .dropdown-toggle {
               @include flex;
@@ -34,6 +34,7 @@
               .dollar {
                 margin-right: 5px;
                 font-size: 20px;
+                color: var(--icon-color);
               }
 
               align-items: center;
@@ -161,6 +162,7 @@
 
   .logo {
     flex: 1;
+    cursor: pointer;
 
     img {
       height: 40px;
@@ -276,6 +278,7 @@
       line-height: 40px;
       border-radius: 50%;
       transition: all 0.3s ease-in-out;
+      cursor: pointer;
 
       &:hover {
         background: var(--light-green-color);

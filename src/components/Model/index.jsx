@@ -1,32 +1,69 @@
 import React from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import './model.scss';
+import useProductApi from '../../api/productApi';
+import RatingStars from '../star';
+import CommonButton from '../../common/button';
 
 export default function PopUpModel({ show, handleClose, product }) {
+    const { products, isLoading, error } = useProductApi();
+    if (!product) return null;
+
     return (
-        <div className='quickviewModel'>
-            <Modal show={show} onHide={handleClose} centered backdrop="static" keyboard={false}>
-                <Modal.Header closeButton>
-                    <Modal.Title>{product?.title}</Modal.Title>
-                </Modal.Header>
-                <Modal.Body >
-                    <div className='productMain' style={{ display: 'flex' }}>
-                        <div className='productImg'>
-                            <img src={product?.thumbnail} alt={product?.title} style={{ width: '100%' }} />
+        <>
+            <Modal
+                show={show}
+                onHide={handleClose}
+                backdrop="static"
+                size="lg"
+                keyboard={false}
+                className="quick-view-modal"
+            >
+                <Modal.Body>
+                    <div className="product-content">
+                        <div className="product-image">
+                            <img src={product.thumbnail} alt={product.title} />
                         </div>
-                        <div className='productDetail'>
-                            <p><strong>Price:</strong> ${product?.price}</p>
-                            <p><strong>Rating:</strong> {product?.rating}</p>
-                            <p>{product?.description}</p>
+
+                        <div className="product-info">
+                            <div className="productName">
+                                <Modal.Title>{product.title}</Modal.Title>
+                            </div>
+                            <div className='ModelRating'>
+                                <RatingStars rating={product.rating} />
+                                <span className="review-count">( {product.reviews ? product.reviews.length : 0} Customer Reviews )</span>
+                            </div>
+                            <div className="price">
+                                ${product.price}
+                            </div>
+                            <div className="brand">
+                                <strong>Brand:</strong> {product.brand}
+                            </div>
+                            <div className="category">
+                                <strong>Category:</strong> {product.category}
+                            </div>
+                            <div className="stock">
+                                <strong>Stock:</strong> {product.stock}
+                            </div>
+                            <div className="squId">
+                                <strong>SKU:</strong> {product.sku}
+                            </div>
+                            <div className="discription">
+                                <strong>Discription:</strong>{product.description}
+                            </div>
+                            <div className='addToCart'>
+                                <CommonButton buttonText={'Add To Cart'} padding={'8px 20px'} />
+                            </div>
                         </div>
                     </div>
                 </Modal.Body>
+
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose}>
                         Close
                     </Button>
                 </Modal.Footer>
             </Modal>
-        </div>
+        </>
     );
 }
