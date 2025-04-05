@@ -279,7 +279,20 @@
       border-radius: 50%;
       transition: all 0.3s ease-in-out;
       cursor: pointer;
-
+      .cart-icon {
+        .addToCart {
+          i {
+            color: var(--icon-color);
+            transition: 0.3s ease-in-out;
+          }
+          &:hover i {
+            color: var(--color-white);
+          }
+        }
+        .cartIconText {
+          display: none;
+        }
+      }
       &:hover {
         background: var(--light-green-color);
         color: var(--color-white);

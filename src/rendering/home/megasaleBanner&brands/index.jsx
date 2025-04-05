@@ -1,15 +1,11 @@
-import React from 'react'
-import CommonButton from '../../../common/button'
-import './megasale.scss'
-import { SectionTitle } from '../../../dataset/herobannerSlider'
-import ViewMore from '../../../common/viewMore'
-import Slider from 'react-slick'
-import brandFirst from '../../../assets/logo/brand1.png'
-import brandSecond from '../../../assets/logo/brand2.png'
-import brandThird from '../../../assets/logo/brand3.png'
-import brandForth from '../../../assets/logo/brand4.png'
-import brandFifth from '../../../assets/logo/brand5.png'
-import brandSixth from '../../../assets/logo/brand6.png'
+import React from 'react';
+import CommonButton from '../../../common/button';
+import './megasale.scss';
+import { SectionTitle } from '../../../dataset/herobannerSlider';
+import ViewMore from '../../../common/viewMore';
+import Slider from 'react-slick';
+import { AllBrandsImage } from '../../../dataset/herobannerSlider';
+
 export default function MegasaleBrands() {
   const settings = {
     dots: false,
@@ -18,9 +14,11 @@ export default function MegasaleBrands() {
     slidesToShow: 6,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 4000,
+    autoplaySpeed: 3000,
     pauseOnHover: true,
-  }
+  };
+  const limitedBrands = AllBrandsImage.slice(0, 6);
+
   return (
     <div>
       <section>
@@ -37,6 +35,7 @@ export default function MegasaleBrands() {
           </div>
         </div>
       </section>
+
       <section>
         <div className="container">
           <div className="categoryIcon">
@@ -46,30 +45,18 @@ export default function MegasaleBrands() {
             </div>
             <ViewMore />
           </div>
+
           <div className="brandSlider">
             <Slider {...settings}>
-              <div className='brand'>
-                <img src={brandFirst} alt='brand' />
-              </div>
-              <div className='brand'>
-                <img src={brandSecond} alt='brand' />
-              </div>
-              <div className='brand'>
-                <img src={brandThird} alt='brand' />
-              </div>
-              <div className='brand'>
-                <img src={brandForth} alt='brand' />
-              </div>
-              <div className='brand'>
-                <img src={brandFifth} alt='brand' />
-              </div>
-              <div className='brand'>
-                <img src={brandSixth} alt='brand' />
-              </div>
+              {limitedBrands.map((el, index) => (
+                <div key={index} className="brand">
+                  <img src={el.brandImage} alt={`brand-${index}`} className="brandImg" />
+                </div>
+              ))}
             </Slider>
           </div>
         </div>
       </section>
     </div>
-  )
+  );
 }

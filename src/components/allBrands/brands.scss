@@ -1,0 +1,20 @@
+.brands {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  .brand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    img {
+      width: 100px;
+      height: auto;
+      object-fit: contain;
+    }
+  }
+}
+    

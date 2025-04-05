@@ -18,8 +18,9 @@ import "./heroSection.scss";
 import { HerobannerText } from "../../../dataset/herobannerSlider";
 import { IoIosArrowForward } from "react-icons/io";
 import { IoIosArrowBack } from "react-icons/io";
+import CommonButton from "../../../common/button";
 function SampleNextArrow(props) {
-  const {onClick } = props;
+  const { onClick } = props;
   return (
     <div className="leftArrow" onClick={onClick}>
       <IoIosArrowForward />
@@ -28,7 +29,7 @@ function SampleNextArrow(props) {
 }
 
 function SamplePrevArrow(props) {
-  const {onClick } = props;
+  const { onClick } = props;
   return (
     <div className="rightArrow" onClick={onClick}>
       <IoIosArrowBack />
@@ -223,9 +224,9 @@ function HeroSection() {
                           <p className="animate__animated">{el.para}</p>
                         </div>
                         <div className="herobannerProductBtn">
-                          <button className="animate__animated">
+                          <CommonButton className="animate__animated">
                             {el.btn}
-                          </button>
+                          </CommonButton>
                         </div>
                       </div>
                       <div className="herobannerImg">

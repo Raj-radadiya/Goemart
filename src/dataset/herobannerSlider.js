@@ -21,6 +21,9 @@ import Garden from "../assets/icon/garden.svg";
 import Automotive from "../assets/icon/automotive.svg";
 import womenBackgroundImg from '../assets/image/womensaleBanner.jpg';
 import headphoneBackgroundImg from '../assets/image/headphoneBanner.jpg';
+import { FaShoppingCart, FaAward } from 'react-icons/fa';
+import { IoIosMan } from "react-icons/io";
+import { GrUserWorker } from "react-icons/gr";
 export const HerobannerText = [
     {
         discount: "Up To 50% Off",
@@ -153,72 +156,105 @@ export const Sale = [
         saleBtn: <CommonButton padding={"8px 20px"} borderRadius={"20px"} />
     }
 ]
-
-export const trandingProduct = [
-  {
-    id: 1,
-    productImg: 'https://dummyimage.com/600x400/000/fff',
-    productName: 'Smartphone X1',
-    productPrice: '$599',
-    description: 'Latest smartphone with advanced features and premium camera',
-    rating: 4.5,
-    stock: 15,
-    brand: 'TechX',
-    category: 'Electronics'
-  },
-  {
-    id: 2,
-    productImg: 'https://dummyimage.com/600x400/000/fff',
-    productName: 'Wireless Headphones',
-    productPrice: '$129',
-    description: 'Noise cancelling wireless headphones with premium sound quality',
-    rating: 4.7,
-    stock: 20,
-    brand: 'AudioPro',
-    category: 'Electronics'
-  },
-  {
-    id: 3,
-    productImg: 'https://dummyimage.com/600x400/000/fff',
-    productName: 'Smart Watch Pro',
-    productPrice: '$249',
-    description: 'Feature-rich smartwatch with health monitoring and notifications',
-    rating: 4.2,
-    stock: 10,
-    brand: 'TechFit',
-    category: 'Wearables'
-  },
-  {
-    id: 4,
-    productImg: 'https://dummyimage.com/600x400/000/fff',
-    productName: 'Laptop Ultra',
-    productPrice: '$999',
-    description: 'Powerful and lightweight laptop for professionals',
-    rating: 4.8,
-    stock: 5,
-    brand: 'TechX',
-    category: 'Electronics'
-  },
-  {
-    id: 5,
-    productImg: 'https://dummyimage.com/600x400/000/fff',
-    productName: 'Bluetooth Speaker',
-    productPrice: '$79',
-    description: 'Portable speaker with excellent bass and long battery life',
-    rating: 4.0,
-    stock: 25,
-    brand: 'SoundMaster',
-    category: 'Audio'
-  },
-  {
-    id: 6,
-    productImg: 'https://dummyimage.com/600x400/000/fff',
-    productName: 'Gaming Console',
-    productPrice: '$449',
-    description: 'Next-generation gaming console with stunning graphics',
-    rating: 4.9,
-    stock: 3,
-    brand: 'GameTech',
-    category: 'Gaming'
-  }
+export const AllBrandsImage = [
+    {
+        brandImage: require('../assets/logo/brand1.png')
+    },
+    {
+        brandImage: require('../assets/logo/brand2.png')
+    },
+    {
+        brandImage: require('../assets/logo/brand3.png')
+    },
+    {
+        brandImage: require('../assets/logo/brand4.png')
+    },
+    {
+        brandImage: require('../assets/logo/brand5.png')
+    },
+    {
+        brandImage: require('../assets/logo/brand6.png')
+    },
+    {
+        brandImage: require('../assets/logo/brand6.png')
+    },
+    {
+        brandImage: require('../assets/logo/brand6.png')
+    },
+    {
+        brandImage: require('../assets/logo/brand6.png')
+    },
+    {
+        brandImage: require('../assets/logo/brand6.png')
+    },
+    {
+        brandImage: require('../assets/logo/brand6.png')
+    },
+    {
+        brandImage: require('../assets/logo/brand6.png')
+    },
+    {
+        brandImage: require('../assets/logo/brand6.png')
+    },
+    {
+        brandImage: require('../assets/logo/brand6.png')
+    },
+    {
+        brandImage: require('../assets/logo/brand6.png')
+    },
+    {
+        brandImage: require('../assets/logo/brand6.png')
+    },
+]
+export const countingData = [
+    {
+        icon: <FaShoppingCart />,
+        count: 50,
+        suffix: 'K+',
+        title: 'Total Sales',
+        color: 'var(--color-black)'
+    },
+    {
+        icon: <IoIosMan />,
+        count: 90,
+        suffix: 'K+',
+        title: 'Happy Clients',
+        color: 'var(--color-black)'
+    },
+    {
+        icon: <GrUserWorker />,
+        count: 150,
+        suffix: 'K+',
+        title: 'Team Workers',
+        color: 'var(--color-black)'
+    },
+    {
+        icon: <FaAward />,
+        count: 30,
+        suffix: 'K+',
+        title: 'Win Awards',
+        color: 'var(--color-black)'
+    }
 ];
+export const TeamMemberDetails = [
+    {
+        image: require('../assets/image/teamMemberFirst.jpg'),
+        name: 'Chad Smith',
+        position: 'Senior Manager'
+    },
+    {
+        image: require('../assets/image/teamMemberSecond.jpg'),
+        name: 'Malissa Fie',
+        position: 'SEO Expert'
+    },
+    {
+        image: require('../assets/image/teamMemberFirst.jpg'),
+        name: 'Chad Smith',
+        position: 'Senior Manager'
+    },
+    {
+        image: require('../assets/image/teamMemberSecond.jpg'),
+        name: 'Malissa Fie',
+        position: 'SEO Expert'
+    },
+]

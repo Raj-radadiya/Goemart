@@ -11,8 +11,9 @@ import { IoEarthSharp } from "react-icons/io5";
 import logo from "../../assets/logo/web_logo.png";
 import CountIncrese from "../../common/increseCount";
 import CommonButton from "../../common/button";
+import AddToCartBtn from "../../common/addtocartbtn";
 
-export default function Header() {
+export default function Header({ backgroundColor, color }) {
   const [openDropdown, setOpenDropdown] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const dropdownRefs = useRef({});
@@ -203,7 +204,7 @@ export default function Header() {
                 <CountIncrese />
               </a>
               <a className="icon">
-                <i className="fa-solid fa-bag-shopping"></i>
+                <AddToCartBtn backgroundColor={'transparent'} className={'cart-icon'} className2={'cartIconText'} />
                 <CountIncrese />
               </a>
             </div>

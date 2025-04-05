@@ -1,0 +1,73 @@
+@import "../../../scss/main";
+
+.counting-section {
+  background-color: var(--color-category);
+  padding: 15px 0;
+
+  .counting-grid {
+    @include gridFour;
+    gap: 30px;
+  }
+
+  .counting-item {
+    gap: 20px;
+    padding: 40px 20px;
+    @include justifyCenter;
+
+    .icon-wrapper {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: var(--icon-color);
+      @include justifyCenter;
+      border: 3px solid var(--color-white);
+
+      .icon {
+        color: var(--color-white);
+        font-size: 32px;
+      }
+    }
+
+    .content {
+      .number-ticker {
+        margin-bottom: 15px;
+
+        .count {
+          font-size: 40px;
+          font-weight: 700;
+          color: var(--color-white);
+          line-height: 1;
+          font-family: "Poppins", sans-serif;
+        }
+      }
+
+      h3 {
+        @include h3;
+        color: var(--color-white);
+        margin: 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .counting-section {
+    .counting-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .counting-section {
+    padding: 50px 0;
+
+    .counting-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .counting-item {
+      padding: 30px 20px;
+    }
+  }
+}

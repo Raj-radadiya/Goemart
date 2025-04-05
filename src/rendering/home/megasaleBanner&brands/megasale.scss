@@ -46,12 +46,21 @@
     @include categoryTitle;
   }
 }
+
 .brandSlider {
+  .slick-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .brand {
-    padding: 0 30px;
+    padding: 10px;
+    text-align: center;
     img {
       width: 100%;
-      object-fit: cover;
+      max-width: 160px;
+      height: auto;
+      object-fit: contain;
     }
   }
 }

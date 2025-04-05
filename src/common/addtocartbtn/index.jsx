@@ -1,17 +1,16 @@
 import React from 'react';
 import './addtoCart.scss';
 
-export default function AddToCartBtn() {
+export default function AddToCartBtn({ backgroundColor, color, className, className2 }) {
   const addItems = () => {
     window.confirm('are you sure this item added to cart?');
-
   }
   return (
-    <div className="addtoCartBtn" onClick={addItems}>
-      <button className="addToCart" aria-label="Add to cart">
+    <div className={`addtoCartBtn ${className}`} onClick={addItems} >
+      <button className="addToCart" aria-label="Add to cart" style={{ backgroundColor: backgroundColor, color: color }}>
         <i className="fa-solid fa-bag-shopping"></i>
       </button>
-      <div className="addToCartText">
+      <div className={`addToCartText ${className2}`}>
         <p>add to cart</p>
       </div>
     </div>

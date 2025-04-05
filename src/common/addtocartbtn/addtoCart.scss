@@ -20,7 +20,7 @@
     &:hover {
       background-color: var(--icon-color);
 
-      &+.addToCartText {
+      & + .addToCartText {
         opacity: 1;
         visibility: visible;
         transform: translateY(-50%) translateX(0);

@@ -1,0 +1,82 @@
+@import '../../../scss/main';
+
+.aboutUsBanner {
+  display: flex;
+  gap: 30px;
+  padding: 50px 0;
+
+  .aboutUsBannerImg {
+    flex: 1;
+    position: relative;
+    background-image: url('../../../assets/image/aboutUsBanner.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+
+    .totalExperience {
+      position: absolute;
+      left: 20px;
+      top: 20px;
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      @include flex;
+      align-items: center;
+      gap: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      width: 180px;
+
+      .experienceIcon {
+        border-radius: 8px;
+        @include flex;
+
+        img {
+          height: 50px;
+        }
+      }
+
+      .experienceDetail {
+        p {
+          font-weight: 700;
+          line-height: 28px;
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  .aboutUsBannerText {
+    flex: 1;
+    padding: 20px;
+
+    .aboutUsTitle {
+      color: var(--icon-color);
+      font-weight: 700;
+      margin-bottom: 20px;
+      display: block;
+      letter-spacing: 2px;
+    }
+
+    h2 {
+      font-size: 36px;
+      margin: 5px 0;
+      font-weight: 700;
+
+      .greenText {
+        color: var(--icon-color);
+      }
+    }
+
+    p {
+      @include p;
+      color: var(--dark-gray-color);
+      margin: 20px 0;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .aboutUsBanner {
+    flex-direction: column;
+  }
+}

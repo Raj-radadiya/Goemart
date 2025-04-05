@@ -1,0 +1,57 @@
+@import "../../scss/main";
+
+.teamCard {
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  transition: all 0.5s ease;
+  &:hover {
+    transform: translateY(-10px);
+  }
+  .memberImage {
+    margin: 0 auto 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .memberInfo {
+    margin-bottom: 20px;
+    h3 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 5px;
+      color: var(--color-dark);
+      transition: 0.5s ease-in-out;
+      &:hover {
+        color: var(--icon-color);
+        cursor: pointer;
+      }
+    }
+    p {
+      @include p;
+      color: var(--icon-color);
+      font-weight: 600;
+    }
+  }
+  .socialLinks {
+    @include justifyCenter;
+    gap: 15px;
+    .social-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: var(--icon-color);
+      @include justifyCenter;
+      color: var(--color-white);
+      font-size: 18px;
+      transition: 0.5s ease-in-out;
+      &:hover {
+        background-color: var(--color-category);
+      }
+    }
+  }
+}
