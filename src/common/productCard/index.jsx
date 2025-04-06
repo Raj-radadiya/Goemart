@@ -39,7 +39,7 @@ export default function ProductCard({ product }) {
           </div>
           <div className="productPriceCart">
             <div className="productCart" >
-              <AddToCartBtn onClick={() => handleProductClick(product.id)} />
+              <AddToCartBtn onClick={() => handleProductClick(product.id)} count={'CartInc'} />
             </div>
             <div className="productPrice">
               <span>${product.price}</span>

@@ -54,6 +54,11 @@
     align-items: center;
     margin-top: 10px;
     flex-direction: row-reverse;
+    .productCart {
+      .CartInc {
+        display: none;
+      }
+    }
 
     .productPrice {
       span {

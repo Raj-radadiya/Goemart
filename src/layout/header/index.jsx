@@ -205,7 +205,6 @@ export default function Header({ backgroundColor, color }) {
               </a>
               <a className="icon">
                 <AddToCartBtn backgroundColor={'transparent'} className={'cart-icon'} className2={'cartIconText'} />
-                <CountIncrese />
               </a>
             </div>
           </div>

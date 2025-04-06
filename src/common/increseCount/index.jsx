@@ -6,7 +6,7 @@ function CountIncrease() {
 
   // Add to cart function
   const handleAddToCart = () => {
-    setCount(count + 1);
+    
   };
 
   return (
