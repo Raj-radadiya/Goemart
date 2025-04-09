@@ -246,7 +246,7 @@ export default function Header({ backgroundColor, color }) {
                   <a href="#" className="navLinkText">
                     Vender
                   </a>
-                  <i classname="fa-solid fa-angle-down"></i>
+                  <i className="fa-solid fa-angle-down"></i>
                 </div>
                 <div className="navLink">
                   <a href="#" className="navLinkText">

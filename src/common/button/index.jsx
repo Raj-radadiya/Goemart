@@ -14,7 +14,7 @@ function CommonButton({
 }) {
   return (
     <div>
-      <button
+      <div
         className={`button ${className}`}
         style={{
           padding: padding,
@@ -28,7 +28,7 @@ function CommonButton({
         }}
       >
         {buttonText || "Shop Now"}
-      </button>
+      </div>
     </div>
   );
 }

@@ -8,7 +8,10 @@ import AddToCartBtn from "../addtocartbtn";
 
 export default function ProductCard({ product }) {
   const navigate = useNavigate();
-
+  const addItems = (productId) => {
+    window.confirm('are you sure this item added to cart?');
+    console.log("add to cart:", productId);
+  }
   const handleProductClick = (productId) => {
     console.log("Clicking product:", productId);
     if (productId) {
@@ -38,8 +41,8 @@ export default function ProductCard({ product }) {
             <RatingStars rating={product.rating} />
           </div>
           <div className="productPriceCart">
-            <div className="productCart" >
-              <AddToCartBtn onClick={() => handleProductClick(product.id)} count={'CartInc'} />
+            <div className="productCart" onClick={addItems} >
+              <AddToCartBtn count={'CartInc'} />
             </div>
             <div className="productPrice">
               <span>${product.price}</span>
