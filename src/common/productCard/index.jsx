@@ -10,7 +10,7 @@ export default function ProductCard({ product }) {
   const navigate = useNavigate();
   const addItems = (productId) => {
     window.confirm('are you sure this item added to cart?');
-    console.log("add to cart:", productId);
+    console.log("add to cart:", product);
   }
   const handleProductClick = (productId) => {
     console.log("Clicking product:", productId);
@@ -33,8 +33,8 @@ export default function ProductCard({ product }) {
             <CardHoverComp product={product} />
           </div>
         </div>
-        <div onClick={() => handleProductClick(product.id)}>
-          <div className="productName" >
+        <div>
+          <div className="productName" onClick={() => handleProductClick(product.id)} >
             <p>{product.title}</p>
           </div>
           <div className="productRating">
