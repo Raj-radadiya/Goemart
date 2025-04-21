@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import "./header.scss";
 import { LuMails } from "react-icons/lu";
-import { RiCustomerService2Fill, RiFontSize } from "react-icons/ri";
+import { RiCustomerService2Fill } from "react-icons/ri";
 import { IoMdHelpCircleOutline } from "react-icons/io";
 import { LuAlarmClockPlus } from "react-icons/lu";
 import { MdOutlineAccountCircle } from "react-icons/md";

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./count.scss";
 
 function CountIncrease() {
@@ -6,7 +6,7 @@ function CountIncrease() {
     <div>
       {/* Cart icon with count */}
       <div className="cart-btn">
-        <span className="cart-count"></span>
+        <span className="cart-count">0</span>
       </div>
     </div>
   );

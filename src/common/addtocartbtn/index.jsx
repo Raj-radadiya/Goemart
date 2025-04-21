@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './addtoCart.scss';
-import CountIncrease from '../increseCount';
+import cartContext from '../../configurations/cartContext';
+
 
 export default function AddToCartBtn({ backgroundColor, color, className, className2, count, addItems }) {
+  const { cartItems } = useContext(cartContext);
+
   return (
     <div className={`addtoCartBtn ${className}`} >
       <button className="addToCart" aria-label="Add to cart" style={{ backgroundColor: backgroundColor, color: color }}>
@@ -12,7 +15,9 @@ export default function AddToCartBtn({ backgroundColor, color, className, classN
         <p>add to cart</p>
       </div>
       <div className={`count ${count}`}>
-        <CountIncrease />
+        {/* <CountIncrease /> */}
+        <span className="cart-count">{cartItems.length}</span> {/* 🔥 Cart Count */}
+
       </div>
     </div>
   );
