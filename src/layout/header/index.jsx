@@ -146,7 +146,7 @@ export default function Header({ backgroundColor, color }) {
       <section>
         <div className="container">
           <div className="mainHeader">
-            <div className="logo">
+            <div className="logo" onClick={() => window.location.reload()}>
               <img src={logo} alt="logo" />
             </div>
             <div className="search">

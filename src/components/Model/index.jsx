@@ -1,14 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import './model.scss';
-import useProductApi from '../../api/productApi';
 import RatingStars from '../star';
 import CommonButton from '../../common/button';
+import cartContext from '../../configurations/cartContext';
 
 export default function PopUpModel({ show, handleClose, product }) {
-    const { products, isLoading, error } = useProductApi();
+    const { addToCart } = useContext(cartContext);
     if (!product) return null;
+    const addtocart = () => {
+        addToCart(product); // this will handle everything
 
+    }
     return (
         <>
             <Modal
@@ -51,7 +54,7 @@ export default function PopUpModel({ show, handleClose, product }) {
                             <div className="discription">
                                 <strong>Discription:</strong>{product.description}
                             </div>
-                            <div className='addToCart'>
+                            <div className='addToCart' onClick={addtocart}>
                                 <CommonButton buttonText={'Add To Cart'} padding={'8px 20px'} />
                             </div>
                         </div>
