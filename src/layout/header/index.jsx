@@ -12,11 +12,13 @@ import logo from "../../assets/logo/web_logo.png";
 import CountIncrese from "../../common/increseCount";
 import CommonButton from "../../common/button";
 import AddToCartBtn from "../../common/addtocartbtn";
+import { useNavigate } from "react-router-dom";
 
 export default function Header({ backgroundColor, color }) {
   const [openDropdown, setOpenDropdown] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const dropdownRefs = useRef({});
+  const navigate = useNavigate();
 
   // Close dropdowns when clicking outside
   useEffect(() => {
@@ -40,6 +42,9 @@ export default function Header({ backgroundColor, color }) {
   const toggleDropdown = (dropdownKey) => {
     setOpenDropdown((prev) => (prev === dropdownKey ? null : dropdownKey));
   };
+  const cartPage = () => {
+    navigate('/cart');
+  }
 
   return (
     <div>
@@ -203,7 +208,7 @@ export default function Header({ backgroundColor, color }) {
                 <i className="fa-regular fa-heart"></i>
                 <CountIncrese />
               </a>
-              <a className="icon">
+              <a className="icon" onClick={cartPage}>
                 <AddToCartBtn backgroundColor={'transparent'} className={'cart-icon'} className2={'cartIconText'} />
               </a>
             </div>
