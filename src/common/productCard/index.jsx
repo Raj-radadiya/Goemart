@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import "./productCard.scss";
-import ProductLabel from "../../components/ProductLabel";
+import ProductLabel from "../ProductLabel";
 import CardHoverComp from "../cardHoverComp";
 import { useNavigate } from "react-router";
 import RatingStars from "../star";
