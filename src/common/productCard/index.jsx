@@ -3,11 +3,10 @@ import "./productCard.scss";
 import ProductLabel from "../../components/ProductLabel";
 import CardHoverComp from "../cardHoverComp";
 import { useNavigate } from "react-router";
-import RatingStars from "../../components/star";
+import RatingStars from "../star";
 import AddToCartBtn from "../addtocartbtn";
 import cartContext from "../../configurations/cartContext";
 import wishlistContext from "../../configurations/wishlistContext";
-import { toast } from "react-toastify";
 
 export default function ProductCard({ product }) {
   const navigate = useNavigate();

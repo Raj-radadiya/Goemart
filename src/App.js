@@ -4,7 +4,7 @@ import "animate.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import RouteIng from './route';
-import CustomLoader from './components/CustomLoader';
+import CustomLoader from './common/CustomLoader'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { CartContextProvider } from './contextProviders/cartContextProviders';
 import 'react-toastify/dist/ReactToastify.css';

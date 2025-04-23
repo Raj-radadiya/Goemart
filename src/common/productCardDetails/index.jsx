@@ -1,13 +1,12 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import './carddetails.scss';
-import RatingStars from '../../components/star';
-import CustomLoader from '../../components/CustomLoader';
+import RatingStars from '../star';
+import CustomLoader from '../CustomLoader';
 import CommonButton from '../button';
 import Wishlist from '../wishlist';
 import cartContext from '../../configurations/cartContext';
 import wishlistContext from '../../configurations/wishlistContext';
-import { toast } from 'react-toastify';
 
 export default function CardDetails() {
   const { id } = useParams();

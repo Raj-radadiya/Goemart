@@ -4,7 +4,7 @@ import wishlistContext from '../../configurations/wishlistContext';
 import cartContext from '../../configurations/cartContext';
 import { FaTrash, FaArrowLeft, FaShoppingCart, FaRegHeart, FaCartPlus } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
-import RatingStars from '../star';
+import RatingStars from '../../common/star';
 import ProductLabel from '../ProductLabel';
 import { toast } from 'react-toastify';
 

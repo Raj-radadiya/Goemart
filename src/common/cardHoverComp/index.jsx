@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import PopUpModel from '../../components/Model';
+import PopUpModel from '../Model';
 import QuickView from '../quickView';
 import Wishlist from '../wishlist';
 import './cardHover.scss';

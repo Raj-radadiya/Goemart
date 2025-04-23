@@ -4,7 +4,7 @@ import { SectionTitle } from "../../../dataset/herobannerSlider";
 import ViewMore from "../../../common/viewMore";
 import "./tranding.scss";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
-import CustomLoader from '../../../components/CustomLoader';
+import CustomLoader from '../../../common/CustomLoader';
 import useProductApi from "../../../api/productApi";
 import ProductCard from "../../../common/productCard";
 

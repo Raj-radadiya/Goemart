@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import './model.scss';
 import RatingStars from '../star';
-import CommonButton from '../../common/button';
+import CommonButton from '../button';
 import cartContext from '../../configurations/cartContext';
 
 export default function PopUpModel({ show, handleClose, product }) {
