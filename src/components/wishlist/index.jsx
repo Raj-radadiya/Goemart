@@ -5,7 +5,7 @@ import cartContext from '../../configurations/cartContext';
 import { FaTrash, FaArrowLeft, FaShoppingCart, FaRegHeart, FaCartPlus } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import RatingStars from '../../common/star';
-import ProductLabel from '../ProductLabel';
+import ProductLabel from '../../common/ProductLabel';
 import { toast } from 'react-toastify';
 
 export default function WishlistPage() {
