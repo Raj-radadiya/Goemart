@@ -6,9 +6,10 @@ import "slick-carousel/slick/slick-theme.css";
 import RouteIng from './route';
 import CustomLoader from './components/CustomLoader';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import CartContextProviders from './contextProviders/cartContextProviders';
+import { CartContextProvider } from './contextProviders/cartContextProviders';
 import 'react-toastify/dist/ReactToastify.css';
 import Toast from './Toast/toast';
+import { WishlistContextProvider } from './contextProviders/wishlistContextProvider';
 
 
 // Create a context for global loading state
@@ -37,12 +38,14 @@ function App() {
     }
 
     return (
-        <CartContextProviders>
-            <LoadingContext.Provider value={loadingState}>
-                <Toast />
-                <RouteIng />
-            </LoadingContext.Provider>
-        </CartContextProviders>
+        <LoadingContext.Provider value={loadingState}>
+            <WishlistContextProvider>
+                <CartContextProvider>
+                    <Toast />
+                    <RouteIng />
+                </CartContextProvider>
+            </WishlistContextProvider>
+        </LoadingContext.Provider>
     );
 }
 

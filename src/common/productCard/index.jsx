@@ -6,17 +6,22 @@ import { useNavigate } from "react-router";
 import RatingStars from "../../components/star";
 import AddToCartBtn from "../addtocartbtn";
 import cartContext from "../../configurations/cartContext";
+import wishlistContext from "../../configurations/wishlistContext";
+import { toast } from "react-toastify";
 
 export default function ProductCard({ product }) {
   const navigate = useNavigate();
   const { addToCart } = useContext(cartContext);
+  const { removeFromWishlist } = useContext(wishlistContext);
+
   const handleAddToCart = (e) => {
     e.stopPropagation(); // Prevents clicking through to the product details
 
     const isConfirmed = window.confirm('Are you sure you want to add this item to cart?');
 
     if (isConfirmed) {
-      addToCart(product); // this will handle everything
+      addToCart(product);
+      removeFromWishlist(product.id, true);
     }
   };
 

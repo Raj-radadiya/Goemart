@@ -9,7 +9,7 @@ import { AiOutlineLogin } from "react-icons/ai";
 import { CgDollar } from "react-icons/cg";
 import { IoEarthSharp } from "react-icons/io5";
 import logo from "../../assets/logo/web_logo.png";
-import CountIncrese from "../../common/increseCount";
+import CountIncrease from "../../common/increseCount";
 import CommonButton from "../../common/button";
 import AddToCartBtn from "../../common/addtocartbtn";
 import { useNavigate } from "react-router-dom";
@@ -45,6 +45,14 @@ export default function Header({ backgroundColor, color }) {
   const cartPage = () => {
     navigate('/cart');
   }
+
+  const wishlistPage = () => {
+    navigate('/wishlist');
+  }
+
+  const handleLogoClick = () => {
+    navigate('/');
+  };
 
   return (
     <div>
@@ -151,7 +159,7 @@ export default function Header({ backgroundColor, color }) {
       <section>
         <div className="container">
           <div className="mainHeader">
-            <div className="logo" onClick={() => window.location.reload()}>
+            <div className="logo" onClick={handleLogoClick}>
               <img src={logo} alt="logo" />
             </div>
             <div className="search">
@@ -200,13 +208,9 @@ export default function Header({ backgroundColor, color }) {
               <a className="icon">
                 <i className="fa-solid fa-circle-user"></i>
               </a>
-              <a className="icon">
-                <i className="fa-solid fa-arrows-rotate"></i>
-                <CountIncrese />
-              </a>
-              <a className="icon">
+              <a className="icon" onClick={wishlistPage}>
                 <i className="fa-regular fa-heart"></i>
-                <CountIncrese />
+                <CountIncrease type="wishlist" />
               </a>
               <a className="icon" onClick={cartPage}>
                 <AddToCartBtn backgroundColor={'transparent'} className={'cart-icon'} className2={'cartIconText'} />

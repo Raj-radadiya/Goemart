@@ -1,33 +1,39 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import cartContext from '../configurations/cartContext'
 import { toast } from 'react-toastify';
+import wishlistContext from '../configurations/wishlistContext';
 
-export default function CartContextProviders(props) {
-    // Initialize cartItems from localStorage if available
+export const CartContextProvider = ({ children }) => {
     const [cartItems, setCartItems] = useState(() => {
         const savedCart = localStorage.getItem('cartItems');
         return savedCart ? JSON.parse(savedCart) : [];
     });
+
+    const { removeFromWishlist } = useContext(wishlistContext);
 
     // Update localStorage whenever cartItems changes
     useEffect(() => {
         localStorage.setItem('cartItems', JSON.stringify(cartItems));
     }, [cartItems]);
 
-    const addToCart = (product) => {
+    const addToCart = (product, silent = false) => {
         if (!product) return;
 
         const exists = cartItems.find((item) => item.id === product.id);
         if (!exists) {
-            // Use the quantity from the product or default to 1
             const productWithQuantity = {
                 ...product,
                 quantity: product.quantity || 1
             };
             setCartItems((prev) => [...prev, productWithQuantity]);
-            toast.success("Product added to cart.");
+            removeFromWishlist(product.id, true);
+            if (!silent) {
+                toast.success("Product added to cart.");
+            }
         } else {
-            toast.info("Product already in cart.");
+            if (!silent) {
+                toast.info("Product already in cart.");
+            }
         }
     };
 
@@ -43,18 +49,17 @@ export default function CartContextProviders(props) {
 
     const removeItem = (id) => {
         setCartItems(prevItems => prevItems.filter(item => item.id !== id));
-        toast.success("Product removed from cart.");
+        toast.error("Product removed from cart.");
     };
 
     return (
         <cartContext.Provider value={{
             cartItems,
-            setCartItems,
             addToCart,
             updateQuantity,
             removeItem
         }}>
-            {props.children}
+            {children}
         </cartContext.Provider>
     );
 }

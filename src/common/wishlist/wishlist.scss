@@ -2,56 +2,87 @@
 
 .wishlist {
   position: relative;
-  
+
   .cardWishlist {
-    padding: 10px;
-    border-radius: 5px;
-    width: 40px;
-    height: 40px;
+    min-width: 180px;
+    padding: 15px 25px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 10px;
     cursor: pointer;
-    border: 1px solid var(--border-gray-color);
-    transition: 0.3s ease;
+    background: transparent;
+    border: 2px solid var(--color-category);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     .cardViewEye {
       font-size: 20px;
-      color: var(--icon-color);
+      color: var(--color-category);
+      transition: all 0.3s ease;
+    }
+
+    .wishlist-text {
+      color: var(--color-category);
+      font-weight: 600;
+      font-size: 15px;
+      transition: all 0.3s ease;
     }
 
     &:hover {
-      background-color: var(--icon-color);
-      
-      .cardViewEye {
+      background-color: var(--color-category);
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(132, 147, 202, 0.3);
+
+      .cardViewEye,
+      .wishlist-text {
         color: white;
+      }
+
+      .cardViewEye {
+        transform: scale(1.1);
       }
     }
   }
 }
 
-// Keep the quickView styles for the card hover version
+// Quick view version for product cards
 .quickView {
   position: relative;
-  
+
   .cardViewImg {
     padding: 10px;
     border-radius: 50%;
-    background-color: var(--color-category);
+    background: var(--color-category);
     width: 40px;
     height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 
     .cardViewEye {
-      font-size: 20px;
+      font-size: 18px;
       color: white;
+      transition: transform 0.3s ease;
     }
 
     &:hover {
       background-color: var(--icon-color);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+
+      .cardViewEye {
+        transform: scale(1.1);
+      }
+
+      & + .quickViewText {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(-50%) translateY(0);
+      }
     }
   }
 }
@@ -59,33 +90,47 @@
 .quickViewText {
   position: absolute;
   left: 50%;
-  bottom: 100%;
-  transform: translateX(-50%);
+  bottom: calc(100% + 10px);
+  transform: translateX(-50%) translateY(5px);
   background-color: var(--color-category);
   color: white;
-  padding: 5px 10px;
-  border-radius: 4px;
-  font-size: 12px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
   white-space: nowrap;
   opacity: 0;
   visibility: hidden;
-  transition: 0.3s ease;
-  margin-bottom: 5px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  text-align: center;
+  width: max-content;
 
   &:after {
-    content: '';
+    content: "";
     position: absolute;
     top: 100%;
     left: 50%;
     transform: translateX(-50%);
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-top: 5px solid var(--color-category);
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid var(--color-category);
   }
 }
 
-.cardWishlist:hover + .quickViewText,
-.cardViewImg:hover + .quickViewText {
-  opacity: 1;
-  visibility: visible;
+// Active state for when item is in wishlist
+.in-wishlist {
+  .cardWishlist {
+    background-color: var(--color-category);
+
+    .cardViewEye,
+    .wishlist-text {
+      color: white;
+    }
+  }
+
+  .cardViewImg {
+    background-color: var(--icon-color);
+  }
 }

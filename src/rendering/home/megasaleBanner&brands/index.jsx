@@ -29,7 +29,9 @@ export default function MegasaleBrands() {
                 <h6>Mega Collections</h6>
                 <h2>Huge Sale Up To 40% Off</h2>
                 <p>at our outlet stores</p>
-                <CommonButton className={'megasaleBtn'} />
+                <div className='megasaleBtn'>
+                  <CommonButton className={'megasaleBtn'} buttonText={'Shop Now'} />
+                </div>
               </div>
             </div>
           </div>

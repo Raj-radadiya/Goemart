@@ -6,16 +6,17 @@ import CustomLoader from '../../components/CustomLoader';
 import CommonButton from '../button';
 import Wishlist from '../wishlist';
 import cartContext from '../../configurations/cartContext';
+import wishlistContext from '../../configurations/wishlistContext';
+import { toast } from 'react-toastify';
 
 export default function CardDetails() {
-  // const [placement, setPlacement] = React.useState("top");
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [selectedQuantity, setSelectedQuantity] = useState(1);
   const { addToCart } = useContext(cartContext);
-
+  const { removeFromWishlist } = useContext(wishlistContext);
 
   useEffect(() => {
     const fetchProductDetails = async () => {
@@ -36,8 +37,8 @@ export default function CardDetails() {
     fetchProductDetails();
   }, [id]);
   const addtocart = () => {
-    addToCart(product); // this will handle everything
-
+    addToCart(product);
+    removeFromWishlist(product.id, true);
   }
 
   if (loading) {
@@ -129,7 +130,7 @@ export default function CardDetails() {
                     <div onClick={addtocart}>
                       <CommonButton buttonText="Add to Cart" borderRadius={"10px"} padding={"15px"} /> {/* Add to Cart button */}
                     </div>
-                    <Wishlist variant='details' /> {/* Changed this line */}
+                    <Wishlist variant='details' product={product} /> {/* Added product prop here */}
                   </div>
                 </div>
               </div>

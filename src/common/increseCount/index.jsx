@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./count.scss";
+import wishlistContext from "../../configurations/wishlistContext";
+import cartContext from "../../configurations/cartContext";
 
-function CountIncrease() {
+function CountIncrease({ type = "cart" }) {
+  const { wishlistItems } = useContext(wishlistContext);
+  const { cartItems } = useContext(cartContext);
+
+  const count = type === "wishlist" ? wishlistItems?.length : cartItems?.length;
+
   return (
     <div>
-      {/* Cart icon with count */}
       <div className="cart-btn">
-        <span className="cart-count">0</span>
+        <span className="cart-count">{count || 0}</span>
       </div>
     </div>
   );

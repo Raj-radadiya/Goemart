@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-// import PopUpModel from '../../components/Model/Model';
 import PopUpModel from '../../components/Model';
 import QuickView from '../quickView';
 import Wishlist from '../wishlist';
@@ -20,7 +19,7 @@ export default function CardHoverComp({ product }) {
                     <div onClick={handleQuickViewClick}>
                         <QuickView />
                     </div>
-                    <Wishlist />
+                    <Wishlist product={product} />
                 </div>
             </div>
 
