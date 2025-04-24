@@ -10,17 +10,15 @@ import { CartContextProvider } from './contextProviders/cartContextProviders';
 import 'react-toastify/dist/ReactToastify.css';
 import Toast from './Toast/toast';
 import { WishlistContextProvider } from './contextProviders/wishlistContextProvider';
+import { ProfileContextProvider } from './contextProviders/profileContextProvider';
+import { ThemeContextProvider } from './contextProviders/themeContextProvider';
 
-
-// Create a context for global loading state
 export const LoadingContext = createContext();
 
 function App() {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        // Initial loading delay
-        //le
         const timer = setTimeout(() => {
             setIsLoading(false);
         }, []);
@@ -39,12 +37,16 @@ function App() {
 
     return (
         <LoadingContext.Provider value={loadingState}>
-            <WishlistContextProvider>
-                <CartContextProvider>
-                    <Toast />
-                    <RouteIng />
-                </CartContextProvider>
-            </WishlistContextProvider>
+            <ThemeContextProvider>
+                <ProfileContextProvider>
+                    <WishlistContextProvider>
+                        <CartContextProvider>
+                            <Toast />
+                            <RouteIng />
+                        </CartContextProvider>
+                    </WishlistContextProvider>
+                </ProfileContextProvider>
+            </ThemeContextProvider>
         </LoadingContext.Provider>
     );
 }

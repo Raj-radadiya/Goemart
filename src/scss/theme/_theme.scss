@@ -1,4 +1,5 @@
 :root {
+  // Light mode variables
   --header-bg: #081828;
   --color-white: #fff;
   --light-green-color: #80ed99;
@@ -9,8 +10,19 @@
   --light-gray-color: rgba(0, 0, 0, 0.08);
   --dark-gray-color: #757f95;
   --dark-violate-color: #081828;
+  
+  // Theme switching variables
+  --background-color: #ffffff;
+  --text-primary: #081828;
+  --card-bg: #ffffff;
+  --border-color: #e2e8f0;
+  --sidebar-bg: #ffffff;
+
+  // Typography
   --heading-font: "Inter", sans-serif;
   --body-font: "Roboto", sans-serif;
+  
+  // Colors
   --color-dark: #081828;
   --color-dark2: #272727;
   --color-gray: #757f95;
@@ -24,16 +36,43 @@
   --dark-violate: #2c3e50;
   --color-blue: #3498db;
 
+  /* Profile specific colors */
+  --profile-bg-color: #f8f9fa;
+  --card-shadow-color: rgba(0, 0, 0, 0.08);
+  --status-pending-bg: #fff3cd;
+  --status-pending-text: #856404;
+  --status-delivered-bg: #d4edda;
+  --status-delivered-text: #155724;
+  --profile-section-border: #e9ecef;
+  --profile-hover-shadow: rgba(0, 0, 0, 0.1);
+
   /* Button colors */
-  --button-hover-bg: #0e995a; // Darker shade of --icon-color
+  --button-hover-bg: #0e995a;
   --button-disabled-bg: #cccccc;
   --button-wishlist-bg: #f5f5f5;
   --button-wishlist-hover-bg: #e5e5e5;
   --button-blue-color: linear-gradient(135deg, #3498db, #9b59b6);
 
-  // border-color
+  /* Border colors */
   --border-gray-color: rgba(0, 0, 0, 0.08);
 
-  // icon color
+  /* Icon colors */
   --icon-pink: #9b59b6;
+}
+
+// Dark mode styles
+body.dark-mode {
+  --background-color: #1a1a1a;
+  --text-primary: #ffffff;
+  --card-bg: #2d2d2d;
+  --border-color: #404040;
+  --sidebar-bg: #2d2d2d;
+  --light-gray-color: rgba(255, 255, 255, 0.1);
+  --dark-gray-color: #a0aec0;
+  --icon-color: #80ed99;
+  --border-gray-color: rgba(255, 255, 255, 0.1);
+  --profile-bg-color: #2d2d2d;
+  --card-shadow-color: rgba(0, 0, 0, 0.2);
+  --button-wishlist-bg: #3d3d3d;
+  --button-wishlist-hover-bg: #4d4d4d;
 }

@@ -54,6 +54,10 @@ export default function Header({ backgroundColor, color }) {
     navigate('/');
   };
 
+  const handleProfileClick = () => {
+    navigate('/user/dashboard');
+  };
+
   return (
     <div>
       <section>
@@ -90,11 +94,11 @@ export default function Header({ backgroundColor, color }) {
                     </div>
                     <a href="#">Daily Deal</a>
                   </div>
-                  <div className="contact">
+                  <div className="contact" onClick={handleProfileClick} style={{cursor: 'pointer'}}>
                     <div className="contactImg">
                       <MdOutlineAccountCircle />
                     </div>
-                    <a href="#">Account</a>
+                    <a>Account</a>
                   </div>
                   <div className="contact">
                     <div className="contactImg">
@@ -205,7 +209,7 @@ export default function Header({ backgroundColor, color }) {
               <i className="fa-solid fa-magnifying-glass search-icon"></i>
             </div>
             <div className="profile">
-              <a className="icon">
+              <a className="icon" onClick={handleProfileClick}>
                 <i className="fa-solid fa-circle-user"></i>
               </a>
               <a className="icon" onClick={wishlistPage}>
