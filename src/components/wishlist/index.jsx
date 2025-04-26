@@ -18,8 +18,8 @@ export default function WishlistPage() {
     addToCart(item, true); // Pass true to skip toast
     removeFromWishlist(item.id, true); // Pass true to skip toast
 
-    // Only show combined toast
-    toast.success('Item added to cart and removed from wishlist!');
+    // Show info toast instead of success toast
+    toast.info('Item moved from wishlist to cart');
   };
 
   if (wishlistItems.length === 0) {

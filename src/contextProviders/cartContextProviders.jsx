@@ -28,11 +28,11 @@ export const CartContextProvider = ({ children }) => {
             setCartItems((prev) => [...prev, productWithQuantity]);
             removeFromWishlist(product.id, true);
             if (!silent) {
-                toast.success("Product added to cart.");
+                toast.info("Product added to cart");  // Changed from success to info
             }
         } else {
             if (!silent) {
-                toast.info("Product already in cart.");
+                toast.info("Product already in cart");
             }
         }
     };

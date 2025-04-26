@@ -3,7 +3,7 @@ import './addtoCart.scss';
 import cartContext from '../../configurations/cartContext';
 
 
-export default function AddToCartBtn({ backgroundColor, color, className, className2, count, addItems }) {
+export default function AddToCartBtn({ backgroundColor, color, className, className2, count, hideHoverText }) {
   const { cartItems } = useContext(cartContext);
 
   return (
@@ -11,13 +11,13 @@ export default function AddToCartBtn({ backgroundColor, color, className, classN
       <button className="addToCart" aria-label="Add to cart" style={{ backgroundColor: backgroundColor, color: color }}>
         <i className="fa-solid fa-bag-shopping"></i>
       </button>
-      <div className={`addToCartText ${className2}`}>
-        <p>add to cart</p>
-      </div>
+      {!hideHoverText && (  // Only render if hideHoverText is false
+        <div className={`addToCartText ${className2}`}>
+          <p>add to cart</p>
+        </div>
+      )}
       <div className={`count ${count}`}>
-        {/* <CountIncrease /> */}
-        <span className="cart-count">{cartItems.length}</span> {/* 🔥 Cart Count */}
-
+        <span className="cart-count">{cartItems.length}</span>
       </div>
     </div>
   );

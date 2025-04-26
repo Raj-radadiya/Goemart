@@ -24,7 +24,9 @@
       right: 20px;
       z-index: 2;
 
-      .edit-button, .save-button, .cancel-button {
+      .edit-button,
+      .save-button,
+      .cancel-button {
         background: var(--gradient-primary);
         color: var(--color-white);
         padding: 8px 16px;
@@ -38,11 +40,7 @@
         font-weight: 500;
 
         &:hover {
-          background: var(--dark-violate-color);
-        }
-
-        svg {
-          font-size: 16px;
+          background: var(--header-bg);
         }
       }
 
@@ -86,7 +84,7 @@
         position: absolute;
         bottom: 10px;
         right: -18px;
-        background-color: #000000;  // Changed to solid black
+        background-color: #000000; // Changed to solid black
         border: 2px solid white;
         border-radius: 50%;
         width: 36px;
@@ -108,7 +106,7 @@
 
     .profile-title-section {
       color: white;
-      
+
       h1 {
         font-size: 32px;
         margin-bottom: 8px;
@@ -185,7 +183,7 @@
           p {
             color: var(--text-primary);
             padding: 8px 0;
-            
+
             &.readonly-field {
               color: var(--dark-gray-color);
               // Removing italic style
@@ -272,4 +270,4 @@
       }
     }
   }
-  }
+}

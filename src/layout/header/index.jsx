@@ -231,7 +231,11 @@ export default function Header({ backgroundColor, color }) {
                 <CountIncrease type="wishlist" />
               </a>
               <a className="icon" onClick={cartPage}>
-                <AddToCartBtn backgroundColor={'transparent'} className={'cart-icon'} className2={'cartIconText'} />
+                <AddToCartBtn 
+                  backgroundColor={'transparent'} 
+                  className={'cart-icon'} 
+                  hideHoverText={true}
+                />
               </a>
             </div>
           </div>
