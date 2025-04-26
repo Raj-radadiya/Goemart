@@ -14,12 +14,12 @@
 }
 
 @mixin a {
-  color: var(--color-dark2);
+  color: var(--color-dark);
   margin-top: 15px;
   font-size: 12px;
   font-weight: 600;
   text-transform: uppercase;
-  border-bottom: 2px solid var(--color-dark2);
+  border-bottom: 2px solid var(--color-dark);
   text-decoration: none;
 
   &:hover {
@@ -68,13 +68,13 @@
   font-size: 22px;
   font-weight: 600;
   text-transform: capitalize;
-  color: var(--color-dark2);
+  color: var(--color-dark);
 }
 @mixin h4 {
   font-size: 25px;
   font-weight: 600;
   text-transform: capitalize;
-  color: var(--color-dark);
+  color: var(--color-primary);
   line-height: 1.2;
 }
 
@@ -87,11 +87,10 @@
 }
 
 @mixin p {
-  color: var(--color-dark2);
+  color: var(--text-primary);
   line-height: 30px;
   font-weight: 400;
   font-size: 17px;
-  margin-bottom: 25px;
 }
 
 @mixin grid {

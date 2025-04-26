@@ -1,4 +1,4 @@
-@import '../../../scss/main';
+@import "../../../scss/main";
 
 .aboutUsBanner {
   display: flex;
@@ -8,7 +8,7 @@
   .aboutUsBannerImg {
     flex: 1;
     position: relative;
-    background-image: url('../../../assets/image/aboutUsBanner.jpg');
+    background-image: url("../../../assets/image/aboutUsBanner.jpg");
     background-size: cover;
     background-position: center;
     border-radius: 10px;
@@ -17,13 +17,12 @@
       position: absolute;
       left: 20px;
       top: 20px;
-      background: white;
+      background: var(--card-bg);
       padding: 15px;
       border-radius: 10px;
       @include flex;
       align-items: center;
       gap: 15px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
       width: 180px;
 
       .experienceIcon {
@@ -40,6 +39,7 @@
           font-weight: 700;
           line-height: 28px;
           margin: 0;
+          color: var(--text-primary);
         }
       }
     }

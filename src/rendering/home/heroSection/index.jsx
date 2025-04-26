@@ -1,19 +1,19 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef } from "react";
 import Slider from "react-slick";
 import { FaAngleRight } from "react-icons/fa";
-import bag from "../../../assets/icon/arrivals.svg";
-import fashion from "../../../assets/icon/dress.svg";
-import electronics from "../../../assets/icon/Electronics.svg";
-import Grocery from "../../../assets/icon/grocery.svg";
-import Music from "../../../assets/icon/music.svg";
-import Furniture from "../../../assets/icon/furniture.svg";
-import Toy from "../../../assets/icon/toy.svg";
-import gift from "../../../assets/icon/gifts.svg";
-import beauty from "../../../assets/icon/mother.svg";
-import health from "../../../assets/icon/beauty.svg";
-import sports from "../../../assets/icon/sports.svg";
-import Garden from "../../../assets/icon/garden.svg";
-import Automotive from "../../../assets/icon/automotive.svg";
+import { GiSchoolBag } from "react-icons/gi";
+import { GiClothes } from "react-icons/gi";
+import { FaLaptop } from "react-icons/fa6";
+import { IoFastFoodSharp } from "react-icons/io5";
+import { RiMusic2Fill } from "react-icons/ri";
+import { GiSofa } from "react-icons/gi";
+import { MdOutlineSmartToy } from "react-icons/md";
+import { BsFillGiftFill } from "react-icons/bs";
+import { MdBabyChangingStation } from "react-icons/md";
+import { MdHealthAndSafety } from "react-icons/md";
+import { MdOutlineSportsBasketball } from "react-icons/md";
+import { RiLandscapeFill } from "react-icons/ri";
+import { FaCar } from "react-icons/fa";
 import "./heroSection.scss";
 import { HerobannerText } from "../../../dataset/herobannerSlider";
 import { IoIosArrowForward } from "react-icons/io";
@@ -37,7 +37,6 @@ function SamplePrevArrow(props) {
   );
 }
 function HeroSection() {
-  const [currentSlide, setCurrentSlide] = useState(0); // Track the current slide index
   const sliderRef = useRef(null);
 
   // Slider settings
@@ -49,63 +48,9 @@ function HeroSection() {
     autoplay: true,
     autoplaySpeed: 4000,
     pauseOnHover: true,
-    afterChange: (index) => setCurrentSlide(index), // Update current slide index
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
   };
-
-  // Trigger animations when the slide changes
-  useEffect(() => {
-    const animateElements = () => {
-      const slide = sliderRef.current?.innerSlider?.list.querySelector(
-        `.slick-slide[data-index="${currentSlide}"]`
-      );
-      if (slide) {
-        const discountElement = slide.querySelector(".offerDiscount h6");
-        const productNameElement = slide.querySelector(
-          ".herobannerProductName h1"
-        );
-        const productPara = slide.querySelector(".herobannerDIscription p");
-        const productBtn = slide.querySelector(".herobannerProductBtn button");
-        const productImg = slide.querySelector(".herobannerImg img");
-
-        // Add a small delay before triggering animations
-        setTimeout(() => {
-          if (discountElement) {
-            discountElement.classList.remove("animate__fadeInUp");
-            void discountElement.offsetWidth; // Trigger reflow
-            discountElement.classList.add("animate__fadeInUp");
-          }
-
-          if (productNameElement) {
-            productNameElement.classList.remove("animate__fadeInRight");
-            void productNameElement.offsetWidth; // Trigger reflow
-            productNameElement.classList.add("animate__fadeInRight");
-          }
-
-          if (productPara) {
-            productPara.classList.remove("animate__fadeInLeft");
-            void productPara.offsetWidth; // Trigger reflow
-            productPara.classList.add("animate__fadeInLeft");
-          }
-
-          if (productBtn) {
-            productBtn.classList.remove("animate__fadeInUp");
-            void productBtn.offsetWidth; // Trigger reflow
-            productBtn.classList.add("animate__fadeInUp");
-          }
-
-          if (productImg) {
-            productImg.classList.remove("animate__fadeInRight");
-            void productImg.offsetWidth; // Trigger reflow
-            productImg.classList.add("animate__fadeInRight");
-          }
-        }, 100); // Adjust the delay (in milliseconds) as needed
-      }
-    };
-
-    animateElements();
-  }, [currentSlide]);
 
   return (
     <section>
@@ -118,84 +63,84 @@ function HeroSection() {
                 <li className="category-item">
                   <div className="category">
                     <div className="category-name">
-                      <img src={bag} alt="bag" />
+                      <GiSchoolBag />
                       <span>New Arrivals</span>
                     </div>
                     <FaAngleRight />
                   </div>
                   <div className="category">
                     <div className="category-name">
-                      <img src={fashion} alt="fashion" />
+                      <GiClothes />
                       <span>Fashion & Accessories</span>
                     </div>
                     <FaAngleRight />
                   </div>
                   <div className="category">
                     <div className="category-name">
-                      <img src={electronics} alt="electronics" />
+                      <FaLaptop />
                       <span>Electronics</span>
                     </div>
                     <FaAngleRight />
                   </div>
                   <div className="category">
                     <div className="category-name">
-                      <img src={Grocery} alt="grocery" />
+                      <IoFastFoodSharp />
                       <span>Grocery & Market</span>
                     </div>
                     <FaAngleRight />
                   </div>
                   <div className="category">
                     <div className="category-name">
-                      <img src={Music} alt="music" />
+                      <RiMusic2Fill />
                       <span>Music & Audio</span>
                     </div>
                   </div>
                   <div className="category">
                     <div className="category-name">
-                      <img src={Furniture} alt="furniture" />
+                      <GiSofa />
                       <span>Home & Furniture</span>
                     </div>
                     <FaAngleRight />
                   </div>
                   <div className="category">
                     <div className="category-name">
-                      <img src={Toy} alt="toy" />
+                      <MdOutlineSmartToy />
                       <span>Toy & Video Games</span>
                     </div>
                   </div>
                   <div className="category">
                     <div className="category-name">
-                      <img src={gift} alt="gift" />
+                      <BsFillGiftFill />
                       <span>Gifts</span>
                     </div>
                   </div>
                   <div className="category">
                     <div className="category-name">
-                      <img src={beauty} alt="beauty" />
+                      <MdBabyChangingStation />
                       <span>Babies & Moms</span>
                     </div>
                   </div>
                   <div className="category">
                     <div className="category-name">
-                      <img src={health} alt="health" />
+                      <MdHealthAndSafety />
                       <span>Health & Beauty</span>
                     </div>
                   </div>
                   <div className="category">
                     <div className="category-name">
-                      <img src={sports} alt="sports" />
+                      <MdOutlineSportsBasketball />
                       <span>Sports & Outdoor</span>
                     </div>
                   </div>
                   <div className="category">
                     <div className="category-name">
-                      <img src={Garden} alt="garden" />
+                      <RiLandscapeFill />
                       <span>Home & Garden</span>
                     </div>
                   </div>
                   <div className="category">
                     <div className="category-name">
-                      <img src={Automotive} alt="automotive" />
+                      <FaCar />
                       <span>Automotive</span>
                     </div>
                   </div>
@@ -213,18 +158,18 @@ function HeroSection() {
                     <div key={index} className="herobannerSlider">
                       <div className="herobannerInfo">
                         <div className="offerDiscount">
-                          <h6 className="animate__animated">{el.discount}</h6>
+                          <h6>{el.discount}</h6>
                         </div>
                         <div className="herobannerProductName">
-                          <h1 className="animate__animated">
+                          <h1>
                             {el.productName}
                           </h1>
                         </div>
                         <div className="herobannerDIscription">
-                          <p className="animate__animated">{el.para}</p>
+                          <p>{el.para}</p>
                         </div>
                         <div className="herobannerProductBtn">
-                          <CommonButton className="animate__animated">
+                          <CommonButton>
                             {el.btn}
                           </CommonButton>
                         </div>
@@ -233,7 +178,7 @@ function HeroSection() {
                         <img
                           src={el.bannerImg}
                           alt="Product Banner"
-                          className="animate__animated"
+
                         />
                       </div>
                     </div>

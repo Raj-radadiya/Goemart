@@ -95,7 +95,9 @@ export default function Tranding() {
       <div className="trandingItemsSlider">
         <Slider {...settings}>
           {products.map((product) => (
-            <ProductCard key={product.id} product={product} />
+            <div className="slide-wrapper">
+              <ProductCard key={product.id} product={product} />
+            </div>
           ))}
         </Slider>
       </div>

@@ -1,78 +1,130 @@
 :root {
-  // Light mode variables
-  --header-bg: #081828;
+  // Solid Colors (Hash)
   --color-white: #fff;
-  --light-green-color: #80ed99;
-  --header-border-color: rgba(255, 255, 255, 0.15);
-  --font-sm: 14px;
   --color-black: #000;
+  --color-blue: #3498db;
+  --color-red: #ff4444;
+  --color-success: #22c55e;
+  --color-warning: #eab308;
+  --color-processing: #3b82f6;
+  --color-star: #ffb800;
+  --color-star-empty: #cccccc;
   --icon-color: #11b76b;
-  --light-gray-color: rgba(0, 0, 0, 0.08);
+  --light-green-color: #80ed99;
   --dark-gray-color: #757f95;
-  --dark-violate-color: #081828;
-  
-  // Theme switching variables
-  --background-color: #ffffff;
-  --text-primary: #081828;
-  --card-bg: #ffffff;
-  --border-color: #e2e8f0;
-  --sidebar-bg: #ffffff;
-
-  // Typography
-  --heading-font: "Inter", sans-serif;
-  --body-font: "Roboto", sans-serif;
-  
-  // Colors
-  --color-dark: #081828;
-  --color-dark2: #272727;
   --color-gray: #757f95;
   --color-category: #8493ca;
   --color-lightBlue: #f0f3f5;
-  --color-red: #ff4444;
-  --color-error: var(--color-red);
-  --text-color: #757f95;
-  --sale-background-color: rgb(255, 234, 229);
-  --sale-background-color2: rgb(255, 226, 246);
-  --dark-violate: #2c3e50;
-  --color-blue: #3498db;
+  --color-dark: #212529;
+  --color-violate: #9747ff;
 
-  /* Profile specific colors */
-  --profile-bg-color: #f8f9fa;
+
+  // RGBA Colors
+  --header-border-color: rgba(255, 255, 255, 0.15);
+  --light-gray-color: rgba(0, 0, 0, 0.08);
   --card-shadow-color: rgba(0, 0, 0, 0.08);
-  --status-pending-bg: #fff3cd;
-  --status-pending-text: #856404;
-  --status-delivered-bg: #d4edda;
-  --status-delivered-text: #155724;
-  --profile-section-border: #e9ecef;
-  --profile-hover-shadow: rgba(0, 0, 0, 0.1);
+  --color-success-light: rgba(34, 197, 94, 0.1);
+  --color-success-hover: rgba(34, 197, 94, 0.2);
+  --color-warning-light: rgba(234, 179, 8, 0.1);
+  --color-warning-hover: rgba(234, 179, 8, 0.2);
+  --color-processing-light: rgba(59, 130, 246, 0.1);
+  --color-processing-hover: rgba(59, 130, 246, 0.2);
+  --shadow-sm: rgba(0, 0, 0, 0.1);
+  --shadow-md: rgba(0, 0, 0, 0.15);
+  --shadow-lg: rgba(0, 0, 0, 0.2);
+  --overlay-light: rgba(255, 255, 255, 0.95);
+  --overlay-dark: rgba(0, 0, 0, 0.5);
+  --border-light: rgba(255, 255, 255, 0.15);
+  --border-dark: rgba(0, 0, 0, 0.08);
+  --bg-light-hover: rgba(255, 255, 255, 0.1);
+  --bg-dark-hover: rgba(0, 0, 0, 0.08);
 
-  /* Button colors */
-  --button-hover-bg: #0e995a;
-  --button-disabled-bg: #cccccc;
-  --button-wishlist-bg: #f5f5f5;
-  --button-wishlist-hover-bg: #e5e5e5;
-  --button-blue-color: linear-gradient(135deg, #3498db, #9b59b6);
+  // Gradients
+  --gradient-primary: linear-gradient(135deg, #3498db, #9b59b6);
+  --gradient-profile: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --cube-gradient: linear-gradient(45deg, #2196f3, #00bcd4);
+  --shine-gradient: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
 
-  /* Border colors */
-  --border-gray-color: rgba(0, 0, 0, 0.08);
+  // Text Colors
+  --text-primary: #081828;
+  --text-secondary: #757f95;
+  --text-heading: #212529;
+  --text-muted: #6c757d;
+  --text-link: #3498db;
+  --text-success: #22c55e;
+  --text-error: var(--color-red);
 
-  /* Icon colors */
-  --icon-pink: #9b59b6;
+  // Button Colors
+  --button-blue-color: var(--gradient-primary);
+  --button-success: var(--color-success);
+  --button-warning: var(--color-warning);
+  --button-processing: var(--color-processing);
+  --button-disabled: var(--color-gray);
+
+  // Background Colors
+  --background-color: #f0f3f5;
+  --header-bg: #081828;
+  --sidebar-bg: #ffffff;
+  --card-bg: #ffffff;
+  --sale-background-color: rgb(255, 234, 229);
+
+  // Navigation Colors
+  --nav-text-color: #081828;
+  --nav-text-hover: var(--light-green-color);
+  --nav-dropdown-bg: var(--color-white);
+  --nav-dropdown-text: #081828;
+  --nav-dropdown-hover-bg: var(--light-green-color);
+  --nav-dropdown-hover-text: var(--color-black);
 }
 
-// Dark mode styles
+// Dark mode overrides
 body.dark-mode {
-  --background-color: #1a1a1a;
-  --text-primary: #ffffff;
-  --card-bg: #2d2d2d;
-  --border-color: #404040;
-  --sidebar-bg: #2d2d2d;
+  // Background Colors
+  --header-bg: #1a1a1a;
+  --background-color: #121212;
+  --card-bg: #1e1e1e;
+  --sidexbar-bg: #1a1a1a;
+
+  // Text Colors
+  --text-primary: #e0e0e0;
+  --text-secondary: #a0aec0;
+  --text-heading: #ffffff;
+  --text-muted: #888888;
+  --text-link: #60a5fa;
+  --text-success: #4ade80;
+  --icon-color: #4ade80;
+
+  // Border Colors
+  --border-color: #2d2d2d;
+
+  // RGBA Colors with better dark mode contrast
   --light-gray-color: rgba(255, 255, 255, 0.1);
   --dark-gray-color: #a0aec0;
-  --icon-color: #80ed99;
-  --border-gray-color: rgba(255, 255, 255, 0.1);
-  --profile-bg-color: #2d2d2d;
-  --card-shadow-color: rgba(0, 0, 0, 0.2);
-  --button-wishlist-bg: #3d3d3d;
-  --button-wishlist-hover-bg: #4d4d4d;
+  --card-shadow-color: rgba(0, 0, 0, 0.3);
+  --shadow-sm: rgba(0, 0, 0, 0.2);
+  --shadow-md: rgba(0, 0, 0, 0.25);
+  --shadow-lg: rgba(0, 0, 0, 0.3);
+  --overlay-light: rgba(18, 18, 18, 0.95);
+  --border-light: rgba(255, 255, 255, 0.1);
+  --border-dark: rgba(255, 255, 255, 0.15);
+
+  // Adjust other colors for better dark mode visibility
+  --color-category: #7a89c2;
+  --color-lightBlue: #1a2234;
+  --color-success-light: rgba(74, 222, 128, 0.1);
+  --color-warning-light: rgba(234, 179, 8, 0.1);
+  --color-processing-light: rgba(96, 165, 250, 0.1);
+
+  // Navigation Colors - Dark Mode
+  --nav-text-color: #e0e0e0;
+  --nav-text-hover: var(--light-green-color);
+  --nav-dropdown-bg: #1e1e1e;
+  --nav-dropdown-text: #e0e0e0;
+  --nav-dropdown-hover-bg: var(--light-green-color);
+  --nav-dropdown-hover-text: #1e1e1e;
 }

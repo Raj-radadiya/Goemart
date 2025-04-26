@@ -1,84 +1,90 @@
 @import "../../scss/main";
 
 .quick-view-modal {
-    .modal-dialog {
-        max-width: 800px;
-    }
+  .modal-dialog {
+    max-width: 800px;
+  }
 
-    .modal-content {
+  .modal-content {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+  }
+
+  .product-content {
+    display: flex;
+    gap: 20px;
+    padding: 0 15px;
+
+    .product-image {
+      flex: 0 0 45%;
+      align-items: center;
+      @include flex;
+
+      img {
+        width: 100%;
+        height: auto;
         border-radius: 8px;
+        object-fit: cover;
+      }
     }
 
-    .product-content {
-        display: flex;
-        gap: 20px;
-        padding: 15px;
+    .product-info {
+      flex: 0 0 55%;
+      padding: 10px;
 
-        .product-image {
-            flex: 0 0 45%;
-            align-items: center;
-            @include flex;
+      .productName {
+        margin: 0 0 5px;
+        color: var(--text-primary);
+      }
 
-            img {
-                width: 100%;
-                height: auto;
-                border-radius: 8px;
-                object-fit: cover;
-            }
+      .ModelRating {
+        margin: 0 0 10px;
+        @include flex;
+
+        .review-count {
+          color: var(--dark-gray-color);
+          font-weight: 500;
+          padding: 0 0 0 5px;
         }
+      }
 
-        .product-info {
-            flex: 0 0 55%;
-            padding: 10px;
+      .price {
+        color: var(--icon-color);
+        font-size: 24px;
+      }
 
-            .productName {
-                margin: 0 0 5px;
-            }
+      .brand,
+      .category,
+      .stock,
+      .squId,
+      .discription {
+        font-weight: 500;
+        margin: 0 0 10px;
+        color: var(--text-primary);
 
-            .ModelRating {
-                margin: 0 0 10px;
-                @include flex;
-
-                .review-count {
-                    color: var(--dark-gray-color);
-                    font-weight: 500;
-                    padding: 0 0 0 5px;
-                }
-            }
-
-            .price {
-                color: var(--icon-color);
-                font-size: 24px;
-            }
-
-            .brand,
-            .category,
-            .stock,
-            .squId,
-            .discription {
-                color: var(--dark-gray-color);
-                font-weight: 500;
-                margin: 0 0 10px;
-
-                span {
-                    display: inline-block;
-                    padding-right: 50px;
-                }
-            }
+        strong {
+          // display: inline-block;
+          padding-right: 10px;
+          color: var(--text-secondary);
         }
+      }
+      .addToCart {
+        margin: 20px 0 0;
+      }
     }
+  }
 }
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
-    .quick-view-modal {
-        .product-content {
-            flex-direction: column;
+  .quick-view-modal {
+    .product-content {
+      flex-direction: column;
 
-            .product-image,
-            .product-info {
-                flex: 0 0 100%;
-            }
-        }
+      .product-image,
+      .product-info {
+        flex: 0 0 100%;
+      }
     }
+  }
 }

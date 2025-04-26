@@ -9,10 +9,10 @@
 
     .star-filled,
     .star-half {
-        color: #ffb800;
+        color: var(--color-star);
     }
 
     .star-empty {
-        color: #cccccc;
+        color: var(--color-star-empty);
     }
 }

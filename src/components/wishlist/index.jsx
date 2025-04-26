@@ -17,7 +17,7 @@ export default function WishlistPage() {
     // Silent operations (without toasts)
     addToCart(item, true); // Pass true to skip toast
     removeFromWishlist(item.id, true); // Pass true to skip toast
-    
+
     // Only show combined toast
     toast.success('Item added to cart and removed from wishlist!');
   };
@@ -98,20 +98,20 @@ export default function WishlistPage() {
                 <p className="item-description">{item.description}</p>
 
                 <div className="item-actions">
-                  <button 
+                  <button
                     className="add-to-cart"
                     onClick={() => handleAddToCart(item)}
                     disabled={item.stock <= 0}
                   >
                     <FaCartPlus /> Add to Cart
                   </button>
-                  <button 
+                  <button
                     className="view-details"
                     onClick={() => navigate(`/product/${item.id}`)}
                   >
                     <FaShoppingCart /> Buy Now
                   </button>
-                  <button 
+                  <button
                     className="remove-btn"
                     onClick={() => removeFromWishlist(item.id)}
                     title="Remove from wishlist"

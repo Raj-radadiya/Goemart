@@ -32,15 +32,15 @@
         transition: all 0.3s ease;
 
         &.pending {
-          background: #eab308;
+          background: var(--color-warning);
         }
 
         &.processing {
-          background: #3b82f6;
+          background: var(--color-processing);
         }
 
         &.delivered {
-          background: #22c55e;
+          background: var(--color-success);
         }
       }
 
@@ -134,29 +134,29 @@
         transition: all 0.3s ease;
 
         &.delivered {
-          background: rgba(34, 197, 94, 0.1);
-          color: #22c55e;
+          background: var(--color-success-light);
+          color: var(--color-success);
 
           &:hover {
-            background: rgba(34, 197, 94, 0.2);
+            background: var(--color-success-hover);
           }
         }
 
         &.pending {
-          background: rgba(234, 179, 8, 0.1);
-          color: #eab308;
+          background: var(--color-warning-light);
+          color: var(--color-warning);
 
           &:hover {
-            background: rgba(234, 179, 8, 0.2);
+            background: var(--color-warning-hover);
           }
         }
 
         &.processing {
-          background: rgba(59, 130, 246, 0.1);
-          color: #3b82f6;
+          background: var(--color-processing-light);
+          color: var(--color-processing);
 
           &:hover {
-            background: rgba(59, 130, 246, 0.2);
+            background: var(--color-processing-hover);
           }
         }
       }

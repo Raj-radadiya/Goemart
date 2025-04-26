@@ -1,13 +1,9 @@
+@import "../../scss/main";
+
 .wishlist-page {
   padding: 40px 0;
   min-height: 100vh;
-  background: #f8f9fa;
-
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
+  background: var(--background-color);
 
   .wishlist-header {
     display: flex;
@@ -17,7 +13,7 @@
 
     h1 {
       font-size: 24px;
-      color: var(--color-dark);
+      color: var(--color-primary);
       
       span {
         font-size: 16px;
@@ -51,15 +47,15 @@
     display: grid;
     gap: 20px;
   }
-
+  
   .wishlist-item {
     display: flex;
     gap: 24px;
-    background: white;
     border-radius: 12px;
     padding: 20px;
     box-shadow: 0 2px 12px rgba(0,0,0,0.08);
     transition: transform 0.2s;
+    background-color: var(--card-bg);
 
     .item-image {
       width: 180px;
@@ -82,7 +78,7 @@
       h3 {
         font-size: 18px;
         margin-bottom: 8px;
-        color: var(--color-dark);
+        color: var(--color-primary);
       }
 
       .item-rating {
@@ -160,8 +156,10 @@
       color: var(--text-secondary);
 
       span {
+        color: var(--text-secondary);
         strong {
-          color: var(--color-dark);
+          color: var(--color-primary);
+          padding-right: 4px;
         }
       }
     }
@@ -305,7 +303,7 @@
 
     h2 {
       font-size: 24px;
-      color: var(--color-dark);
+      color: var(--color-primary);
       margin-bottom: 12px;
     }
 

@@ -1,8 +1,10 @@
 @import "../../scss/main";
 .productCard {
-  padding: 20px;
   position: relative;
   cursor: pointer;
+  background-color: var(--card-bg);
+  padding: 20px;
+  border-radius: 10px;
 
   .productImgAndMore {
     position: relative;

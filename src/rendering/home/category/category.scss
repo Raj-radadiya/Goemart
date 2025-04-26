@@ -18,10 +18,13 @@
 
     .categoryCard {
       background-color: var(--color-lightBlue);
-      border-radius: 5px;
+      border-radius: 12px; // Increased border radius
       @include justifyCenter;
       flex-direction: column;
       cursor: pointer;
+      padding: 25px 0; // Increased padding
+      transition: all 0.3s ease-in-out;
+      border: 1px solid rgba(255, 255, 255, 0.05); // Subtle border
 
       .categoryImg {
         background-color: var(--color-category);
@@ -31,6 +34,7 @@
         border-radius: 50%;
         @include justifyCenter;
         transition: 0.5s ease-in-out;
+        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2); // Subtle glow
 
         img {
           width: 45px;
@@ -42,24 +46,18 @@
 
       .categoryDIsc {
         h4 {
-          margin: 10px 0 5px;
+          margin: 15px 0 5px; // Increased margin
           transition: 0.5s ease-in-out;
           font-size: 18px;
+          color: var(--text-primary);
+          font-weight: 600;
         }
 
         p {
           @include p;
-          color: var(--color-gray) !important;
-        }
-      }
-
-      &:hover {
-        .categoryImg {
-          background-color: var(--icon-color);
-        }
-
-        .categoryDIsc h4 {
-          color: var(--icon-color);
+          color: var(--text-secondary) !important;
+          margin: 0;
+          font-size: 14px; // Smaller font size
         }
       }
     }

@@ -3,6 +3,8 @@
 .header {
   background-color: var(--header-bg);
   padding: 10px 0 12px;
+  transition: background-color 0.3s ease;
+  border-bottom: 1px solid var(--border-color);
 
   .container {
     .headerMain {
@@ -62,30 +64,15 @@
               position: absolute; // Add this line
               top: 100%; // Add this line
               left: 0; // Add this line
-              background-color: var(--color-white);
+              background-color: var(--card-bg);
               padding: 10px;
-              box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+              box-shadow: 0px 4px 6px var(--shadow-sm);
               z-index: 10;
               border-radius: 10px;
               min-width: 80px;
 
-              .dropdown-a {
-                color: var(--color-black) !important;
-                padding: 8px 12px;
-                display: block;
-                text-decoration: none;
-                text-align: center;
-
-                &:hover {
-                  background-color: var(--light-green-color);
-                  color: var(--color-black);
-                  transition: 0.3s ease-in-out;
-                  border-radius: 10px;
-                }
-              }
-
               a {
-                color: var(--color-black) !important;
+                color: var(--text-primary) !important;
                 padding: 8px 12px;
                 display: block;
                 text-decoration: none;
@@ -157,8 +144,6 @@
   align-items: center;
   justify-content: space-between;
   padding: 15px 20px;
-  background: var(--color-white);
-  border-bottom: 1px solid var(--light-gray-color);
 
   .logo {
     flex: 1;
@@ -177,6 +162,7 @@
     border-radius: 8px;
     color: var(--dark-gray-color);
     transition: all 0.3s ease-in-out;
+    background-color: transparent;
 
     .category-dropdown {
       position: relative;
@@ -191,6 +177,9 @@
         font-weight: bold;
       }
     }
+    input {
+      background-color: transparent;
+    }
 
     i {
       font-size: 12px;
@@ -201,8 +190,8 @@
       position: absolute;
       top: 100%;
       left: 0;
-      background: var(--color-white);
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      background: var(--nav-dropdown-bg);
+      box-shadow: 0 4px 6px var(--shadow-sm);
       width: 220px;
       list-style: none;
       padding: 10px 0;
@@ -268,34 +257,51 @@
     justify-content: flex-end;
     gap: 15px;
 
-    .icon {
+    .icon, .theme-toggle {
       position: relative;
       text-align: center;
       font-size: 16px;
       color: var(--icon-color);
       width: 40px;
       height: 40px;
-      line-height: 40px;
+      line-height: normal; // Changed from line-height: 40px
       border-radius: 50%;
       transition: all 0.3s ease-in-out;
       cursor: pointer;
-      .cart-icon {
-        .addToCart {
-          i {
-            color: var(--icon-color);
-            transition: 0.3s ease-in-out;
-          }
-          &:hover i {
-            color: var(--color-white);
-          }
-        }
-        .cartIconText {
-          display: none;
-        }
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      border: none;
+      text-decoration: none; // Add this to remove underline from anchor tags
+
+      i, svg {
+        color: var(--icon-color);
+        font-size: 20px;
+        transition: color 0.3s ease-in-out;
+        text-decoration: none; // Add this
+        line-height: 1; // Add this
       }
+
       &:hover {
         background: var(--light-green-color);
-        color: var(--color-white);
+        text-decoration: none; // Add this
+        
+        i, svg {
+          color: var(--color-white);
+        }
+      }
+    }
+
+    a.icon {
+      text-decoration: none; // Specifically for anchor tags
+    }
+
+    .theme-toggle {
+      cursor: pointer;
+      
+      .theme-icon {
+        color: var(--icon-color);
       }
     }
   }
@@ -309,6 +315,7 @@
     @include flex;
     gap: 10px;
     padding: 10px 20px;
+    color: var(--nav-text-color);
   }
 
   .navLinksBtn {
@@ -326,7 +333,15 @@
 
         a {
           text-decoration: none;
-          color: var(--color-black);
+          color: var(--nav-text-color);
+
+          &:hover {
+            color: var(--nav-text-hover);
+          }
+        }
+
+        i {
+          color: var(--nav-text-color);
         }
       }
     }

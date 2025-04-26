@@ -2,13 +2,14 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
+  background-color: var(--background-color);
 
   .profile-header {
     position: relative;
     margin-bottom: 30px;
 
     .profile-cover {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: var(--gradient-profile);
       height: 200px;
       border-radius: 15px;
       position: relative;
@@ -24,7 +25,7 @@
       z-index: 2;
 
       .edit-button, .save-button, .cancel-button {
-        background: var(--button-blue-color);
+        background: var(--gradient-primary);
         color: var(--color-white);
         padding: 8px 16px;
         border-radius: 8px;

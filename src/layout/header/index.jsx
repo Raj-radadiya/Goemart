@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useContext } from "react";
 import "./header.scss";
 import { LuMails } from "react-icons/lu";
 import { RiCustomerService2Fill } from "react-icons/ri";
@@ -13,8 +13,10 @@ import CountIncrease from "../../common/increseCount";
 import CommonButton from "../../common/button";
 import AddToCartBtn from "../../common/addtocartbtn";
 import { useNavigate } from "react-router-dom";
+import themeContext from '../../configurations/themeContext';
 
 export default function Header({ backgroundColor, color }) {
+  const { isDarkMode, toggleTheme } = useContext(themeContext);
   const [openDropdown, setOpenDropdown] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const dropdownRefs = useRef({});
@@ -58,6 +60,11 @@ export default function Header({ backgroundColor, color }) {
     navigate('/user/dashboard');
   };
 
+  // Add onClick handler to theme toggle button
+  const handleThemeToggle = () => {
+    toggleTheme();
+  };
+
   return (
     <div>
       <section>
@@ -94,7 +101,7 @@ export default function Header({ backgroundColor, color }) {
                     </div>
                     <a href="#">Daily Deal</a>
                   </div>
-                  <div className="contact" onClick={handleProfileClick} style={{cursor: 'pointer'}}>
+                  <div className="contact" onClick={handleProfileClick} style={{ cursor: 'pointer' }}>
                     <div className="contactImg">
                       <MdOutlineAccountCircle />
                     </div>
@@ -209,6 +216,13 @@ export default function Header({ backgroundColor, color }) {
               <i className="fa-solid fa-magnifying-glass search-icon"></i>
             </div>
             <div className="profile">
+              <a className="icon" onClick={handleThemeToggle}>
+                {isDarkMode ? (
+                  <i className="fa-solid fa-sun theme-icon"></i>
+                ) : (
+                  <i className="fa-solid fa-moon theme-icon"></i>
+                )}
+              </a>
               <a className="icon" onClick={handleProfileClick}>
                 <i className="fa-solid fa-circle-user"></i>
               </a>
@@ -226,9 +240,7 @@ export default function Header({ backgroundColor, color }) {
       <section>
         <div className="container">
           <div className="navLinkMain">
-            <div className="allCategoriesSec">
-              <i className="fa-solid fa-equals"></i>
-              <span>All Categories</span>
+            <div>
             </div>
             <div className="navLinksBtn">
               <div className="navLinkAll">

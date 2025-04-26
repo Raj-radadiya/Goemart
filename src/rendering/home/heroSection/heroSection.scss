@@ -2,24 +2,19 @@
 
 .heroSection {
   @include flex;
+  color: var(--text-primary);
+  gap: 20px;
+  padding:0 0 50px;
 
   .sideBar {
+    background-color: var(--card-bg);
     width: 22%;
+    border-radius: 10px;
+    // background-color: var(--background-color);
 
     .sidebarMenu {
-      background-color: #fff;
-      box-shadow: 0 0 40px 5px (rgb(0 0 0 /5%));
       transition: all 0.3s ease-in-out;
-      height: 100vh;
       overflow-y: auto;
-
-      &.closed {
-        width: 80px;
-
-        .category-name {
-          display: none;
-        }
-      }
 
       .category-list {
         list-style: none;
@@ -29,7 +24,6 @@
           align-items: center;
           padding: 8px;
           font-size: 16px;
-          color: #333;
           cursor: pointer;
           border-radius: 5px;
           transition: background 0.3s ease;
@@ -41,15 +35,11 @@
             .category-name {
               @include flex;
               gap: 10px;
-
-              img {
-                width: 25px;
+              font-size: 24px;
+              span {
+                font-size: 16px;
               }
             }
-          }
-
-          &:hover {
-            background: #f5f5f5;
           }
         }
       }
@@ -61,7 +51,7 @@
       padding: 20px;
       transition: margin-left 0.3s ease-in-out;
 
-      .sidebarMenu.closed+& {
+      .sidebarMenu.closed + & {
         margin-left: 80px;
       }
     }
@@ -70,6 +60,7 @@
   .herobanner {
     width: 78%;
     position: relative;
+    border-radius: 10px;
 
     .leftArrow {
       position: absolute;

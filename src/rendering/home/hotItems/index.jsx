@@ -97,7 +97,9 @@ export default function HotItems() {
       <div className="trandingItemsSlider">
         <Slider {...settings}>
           {products.map((product) => (
-            <ProductCard product={product} />
+            <div className="slide-wrapper">
+              <ProductCard product={product} />
+            </div>
           ))}
         </Slider>
       </div>

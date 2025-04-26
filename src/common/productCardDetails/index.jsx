@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
+import Slider from "react-slick";
 import { useParams } from 'react-router-dom';
 import './carddetails.scss';
 import RatingStars from '../star';
@@ -16,6 +17,29 @@ export default function CardDetails() {
   const [selectedQuantity, setSelectedQuantity] = useState(1);
   const { addToCart } = useContext(cartContext);
   const { removeFromWishlist } = useContext(wishlistContext);
+
+  // Slider settings
+  const settings = {
+    dots: false,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 4,  // Reduced from 6 to show larger images
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,  // Reduced from 4
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,  // Reduced from 3
+        }
+      }
+    ]
+  };
 
   useEffect(() => {
     const fetchProductDetails = async () => {
@@ -67,6 +91,26 @@ export default function CardDetails() {
                     className="primary-image"
                   />
                 </div>
+                
+                {/* Add product images slider */}
+                {product.images && product.images.length > 0 && (
+                  <div className="product-images-slider">
+                    <Slider {...settings}>
+                      {product.images.map((image, index) => (
+                        <div key={index} className="slider-image">
+                          <img 
+                            src={image} 
+                            alt={`${product.title} - ${index + 1}`}
+                            onClick={() => {
+                              const mainImage = document.querySelector('.primary-image');
+                              mainImage.src = image;
+                            }}
+                          />
+                        </div>
+                      ))}
+                    </Slider>
+                  </div>
+                )}
               </div>
 
               {/* Right Side - Product Information */}
